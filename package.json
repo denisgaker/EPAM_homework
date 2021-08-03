@@ -4,7 +4,8 @@
   "description": "Training application \"HETflix\"\r ## Ветки\r - master - основная ветка\r - lesson2 - Task 2 \"Webpack lecture\"\r ## Ссылки по урокам\r ### Task 2 \"Webpack lecture\" (lesson2)\r - [Документация Webpack](https://webpack.js.org/guides/getting-started/)",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
