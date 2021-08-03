@@ -4,7 +4,7 @@ module.exports = {
     mode: 'development',
     entry: './src/index.js',
     output: {
-        filename: 'main.js',
+        filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
     module: {
@@ -19,6 +19,14 @@ module.exports = {
                         plugins: ['@babel/plugin-transform-runtime']
                     }
                 }
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.(png|svg|jpeg|jpg|gif)$/i,
+                type: 'asset/resource'
             }
         ]
     }
