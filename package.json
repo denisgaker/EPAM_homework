@@ -2,7 +2,7 @@
   "name": "EPAM_homework",
   "version": "1.0.0",
   "description": "Training application \"HETflix\"\r ## Ветки\r - master - основная ветка\r - lesson2 - Task 2 \"Webpack lecture\"\r ## Ссылки по урокам\r ### Task 2 \"Webpack lecture\" (lesson2)\r - [Документация Webpack](https://webpack.js.org/guides/getting-started/)",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "jest": "^27.0.6",
+    "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-redux": "^7.2.4",
     "react-router": "^5.2.0",
