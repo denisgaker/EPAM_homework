@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env) => {
     console.log('Goal: ', env.goal); //local
-    console.log('Production: ', env.prodaction);
+    console.log('Production: ', env.production);
     return {
         mode: 'development',
         entry: './src/index.js',

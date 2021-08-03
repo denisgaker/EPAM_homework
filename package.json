@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
-    "prod": "webpack --env goal=prodaction prodaction=true production --progress",
+    "prod": "webpack --env goal=production production=true production --progress",
+    "local": "webpack --env goal=local production=false local --progress",
     "build": "webpack",
     "watch": "webpack --watch"
   },
