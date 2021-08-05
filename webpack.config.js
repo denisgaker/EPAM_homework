@@ -2,10 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env) => {
-    console.log('Goal: ', env.goal, '\nmySecretKey: ', env.mySecretKey); //local
-    console.log('Production: ', env.production, '\nmySecretKey: ', env.mySecretKey);
+    console.log('Goal: ', env.goal, '\nProduction: ', env.production, '\nmySecretKey: ', env.mySecretKey);
     return {
-        mode: 'development',
+        mode: env.production ? 'production' : 'development',
         entry: './src/index.js',
         devServer: {
             contentBase: './dist'
@@ -23,7 +22,7 @@ module.exports = (env) => {
         module: {
             rules: [
                 {
-                    test: /\.m?js$/,
+                    test: /\.m?(js)$/,
                     exclude: /(node_modules|bower_components)/,
                     use: {
                         loader: 'babel-loader',
