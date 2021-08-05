@@ -2,8 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env) => {
-    console.log('Goal: ', env.goal); //local
-    console.log('Production: ', env.production);
+    console.log('Goal: ', env.goal, '\nmySecretKey: ', env.mySecretKey); //local
+    console.log('Production: ', env.production, '\nmySecretKey: ', env.mySecretKey);
     return {
         mode: 'development',
         entry: './src/index.js',
