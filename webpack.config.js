@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (env) => {
     console.log('Goal: ', env.goal, '\nProduction: ', env.production, '\nmySecretKey: ', env.mySecretKey);
@@ -9,6 +10,7 @@ module.exports = (env) => {
         entry: './src/index.js',
         devServer: env.production ? { contentBase: false } : { contentBase: './dist' },
         plugins: [
+            new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
                 title: 'Output Management'
             })
@@ -16,7 +18,7 @@ module.exports = (env) => {
         output: {
             filename: '[name].bundle.js',
             path: path.resolve(__dirname, 'dist'),
-            clean: true
+            clean: env.production ? false : true
         },
         module: {
             rules: [
