@@ -1,0 +1,97 @@
+header {
+    width: 100%;
+    overflow: hidden;
+    background: url('./img/header_bg.jpg') center center / cover no-repeat;
+    padding: 15px 10px;
+}
+
+header h1 {
+    color: #fff;
+    text-align: center;
+}
+
+.search,
+.searchControl {
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+}
+
+.search h2,
+.searchControl,
+.headerSearch {
+    width: 100%;
+}
+
+.headerSearch {
+    margin: 0 0 15px 0;
+    padding: 0 10px;
+    min-height: 31px;
+}
+
+.search h2 {
+    color: #fff;
+}
+
+.searchControl {
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+
+.searchBy > label > input + span,
+.searchBy > span {
+    padding: 5px 10px;
+    color: #fff;
+}
+
+.searchBy > label {
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #ff0000;
+}
+
+.searchBy > label > input[type="radio"] {
+    display: none;
+}
+
+.searchBy > label > input + span {
+    display: block;
+    border: 1px solid #ff0000;
+    transition: background-color ease .3s, color ease .3s;
+}
+
+.searchBy > label > input:checked + span {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.searchBy > label:hover > input + span,
+.searchBy > label:focus > input + span {
+    background-color: #fff;
+    color: #ff0000;
+    transition: background-color ease .3s, color ease .3s;
+}
+
+button#headerSearchBtn {
+    min-height: 31px;
+    padding: 5px 10px;
+    border: 1px solid #ff0000;
+    background-color: #ff0000;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color ease .3s, color ease .3s;
+}
+
+button#headerSearchBtn:hover,
+button#headerSearchBtn:focus {
+    background-color: #fff;
+    color: #ff0000;
+    transition: background-color ease .3s, color ease .3s;
+}
