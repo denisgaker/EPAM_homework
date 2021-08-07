@@ -3,6 +3,7 @@ Training application "HETflix"
 ## Ветки
 - master - основная ветка
 - lesson2 - Task 2 "Webpack lecture"
+- lesson3 - Task 3 "Components lecture"
 ## Ссылки по урокам
 ### Task 2 "Webpack lecture" (lesson2)
 - [Документация Webpack](https://webpack.js.org/guides/getting-started/)
@@ -14,3 +15,7 @@ Training application "HETflix"
 - [Использование переменных окружения в Node.js](https://habr.com/ru/company/ruvds/blog/351254/)
 - [Переменные окружения (способы настройки)](https://dmitrytinitilov.gitbooks.io/strange-javascript/content/nodejs/environment_variables.html)
 - [DEV and PROD build configurations (Из док-ции Webpack)](https://webpack.js.org/guides/production/)
+### Task 3 "Components lecture" (lesson3)
+- [TypeScript (из док-ции Webpack)](https://webpack.js.org/guides/typescript/)
+- [TypeScript документация](https://www.typescriptlang.org/docs/)
+- [Error Boundaries](https://reactjs.org/docs/error-boundaries.html)
