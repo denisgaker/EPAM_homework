@@ -7,7 +7,7 @@ module.exports = (env) => {
     return {
         mode: env.production ? 'production' : 'development',
         devtool: env.production ? false : 'inline-source-map',
-        entry: './src/index.js',
+        entry: './src/index.ts',
         devServer: env.production ? { contentBase: false } : { contentBase: './dist' },
         plugins: [
             new CleanWebpackPlugin(),
@@ -40,8 +40,16 @@ module.exports = (env) => {
                 {
                     test: /\.(png|svg|jpeg|jpg|gif)$/i,
                     type: 'asset/resource'
+                },
+                {
+                    test: /\.tsx?$/,
+                    use: 'ts-loader',
+                    exclude: /node_modules/
                 }
             ]
+        },
+        resolve: {
+            extensions: ['.tsx', '.ts', '.js']
         }
     }
 }
