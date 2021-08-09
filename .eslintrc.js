@@ -26,5 +26,7 @@ module.exports = {
     'react/display-name': ['off', {'ignoreTranspilerName': false}],
     'semi': ['error', 'always'],
     'quotes': ['error', 'single'],
+    'max-len': 200,
+    'no-unused-vars': 'off'
   },
 };
