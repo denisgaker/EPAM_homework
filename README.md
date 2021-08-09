@@ -18,4 +18,7 @@ Training application "HETflix"
 ### Task 3 "Components lecture" (lesson3)
 - [TypeScript (из док-ции Webpack)](https://webpack.js.org/guides/typescript/)
 - [TypeScript документация](https://www.typescriptlang.org/docs/)
+- [TypeScript + React документация](https://www.typescriptlang.org/docs/handbook/react.html)
 - [Error Boundaries](https://reactjs.org/docs/error-boundaries.html)
+- [ESLint документация](https://eslint.org/)
+- [Prettier документация](https://prettier.io/docs/en/index.html)

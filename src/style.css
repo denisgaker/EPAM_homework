@@ -1,9 +1,7 @@
-.hello {
-    color: green;
-}
-
-img {
-    display: block;
-    width: 300px;
-    margin: 10px 0 10px;
+html, body {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
 }

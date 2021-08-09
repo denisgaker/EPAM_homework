@@ -12,7 +12,7 @@ function component() {
 
   element.innerHTML = _.join(['Hello', 'webpack']);
   element.classList.add('hello');
-  
+
   const myIcon = new Image();
   myIcon.src = Icon;
 
