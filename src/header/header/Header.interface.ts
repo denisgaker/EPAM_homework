@@ -1,3 +1,7 @@
 export interface HeadingProps {
-    name: string;
+  name: string;
+}
+
+export interface HeaderProps {
+  children: number | string;
 }
