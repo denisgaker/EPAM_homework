@@ -11,7 +11,20 @@ enum MainKey {
 
 interface DatatsType {
   main: mainType
+  socialNetworkLinks: SocialNetworkLinksType[]
   movies: MoviesType[]
+}
+
+type SocialNetworkLinksType = {
+  [key in SocialNetworkLinksKey]: string
+}
+
+enum SocialNetworkLinksKey {
+  name = 'name',
+  link = 'link',
+  desc = 'desc',
+  target = 'target',
+  key = 'key'
 }
 
 interface MovieTypeStrings {
@@ -41,6 +54,36 @@ export const Datats: DatatsType = {
     'searchPlaceholder': 'Quentin Tarantino',
     'searchBtnText': 'Search',
   },
+  "socialNetworkLinks": [
+    {
+      "name": "vk",
+      "link": "https://vk.com",
+      "desc": "Переход на социальную сеть Вконтакте",
+      "target": "_blanck",
+      "key": "fdsn_1"
+    },
+    {
+      "name": "facebook",
+      "link": "https://facebook.com",
+      "desc": "Переход на социальную сеть Facebook",
+      "target": "_blanck",
+      "key": "fdsn_2"
+    },
+    {
+      "name": "instagram",
+      "link": "https://instagram.com",
+      "desc": "Переход на социальную сеть Instagram",
+      "target": "_blanck",
+      "key": "fdsn_3"
+    },
+    {
+      "name": "youtube",
+      "link": "https://youtube.com",
+      "desc": "Переход на видеохостинг Youtube",
+      "target": "_blanck",
+      "key": "fdsn_4"
+    }
+],
   'movies': [
     {
       'title': 'Rick and Morty',

@@ -3,7 +3,11 @@ import {Datats} from './Data';
 import Header from './header/header/Header';
 import Heading from './header/header/Heading';
 import Search from './header/search/Search';
+import MovieList from './content/MovieList';
+import Footer from './footer/footer/Footer';
+import SocLinks from './footer/SocLinks';
 import './style.css';
+import Copyright from './footer/copyright/Copyright';
 
 const NameApp = Datats.main.nameApp;
 const SearchCTA = Datats.main.searchCTA;
@@ -21,6 +25,11 @@ const App = (): React.ReactElement => {
           searchBtnText = { SearchBtnText }
         />
       </Header>
+      <MovieList />
+      <Footer>
+        <Copyright name={NameApp} />
+        <SocLinks />
+      </Footer>
     </>
   );
 };
