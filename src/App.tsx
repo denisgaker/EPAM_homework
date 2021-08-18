@@ -4,7 +4,7 @@ import Header from './header/header/Header';
 import Heading from './header/header/Heading';
 import Search from './header/search/Search';
 import MovieList from './content/MovieList';
-import ErrorBoundary from './content/errorBoundary/ErrorBoundary';
+import ErrorBoundary from './errorBoundary/ErrorBoundary';
 import Footer from './footer/footer/Footer';
 import SocLinks from './footer/SocLinks';
 import './style.css';
