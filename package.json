@@ -5,11 +5,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open --env production=false",
-    "build": "webpack --env production",
-    "watch": "webpack --watch",
-    "prod": "webpack serve --open --env production goal=production mySecretKey=rabbitWarrior",
-    "local": "webpack serve --open --env production=false goal=local mySecretKey=rabbit"
+    "start": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config wepback.prod.js",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
