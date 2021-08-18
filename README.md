@@ -22,3 +22,4 @@ Training application "HETflix"
 - [Error Boundaries](https://reactjs.org/docs/error-boundaries.html)
 - [ESLint документация](https://eslint.org/)
 - [Prettier документация](https://prettier.io/docs/en/index.html)
+- [Тип для componentStack в ErrorBoundary](https://question-it.com/questions/3220446/svojstvo-componentstack-ne-suschestvuet-dlja-tipa-stringts)
