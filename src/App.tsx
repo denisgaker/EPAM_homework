@@ -16,6 +16,10 @@ const SearchPlaceholder = Datats.main.searchPlaceholder;
 const SearchBtnText = Datats.main.searchBtnText;
 
 const App = (): React.ReactElement => {
+
+
+
+  
   return (
     <>
       <Header>
