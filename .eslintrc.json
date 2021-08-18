@@ -8,7 +8,7 @@
         "plugin:react-hooks/recommended",
         "plugin:react/recommended",
         "plugin:import/errors",
-        "plugin:import/warnints",
+        "plugin:import/warnings",
         "plugin:import/typescript",
         "google"
     ],
