@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-export interface ErrorBoundaryTypes {
+export interface Props {
   props?: React.FC;
-  error?: null | string;
-  errorInfo?: null | { componentStack: Function };
+  error: null | Error;
+  errorInfo: React.ErrorInfo;
 }

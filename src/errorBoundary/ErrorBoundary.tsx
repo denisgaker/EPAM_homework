@@ -1,28 +1,24 @@
 import * as React from 'react';
-import { ErrorBoundaryTypes } from './errorBoundary.interface';
+import { Props } from './errorBoundary.interface';
 
-class ErrorBoundary extends React.Component<{}, ErrorBoundaryTypes> {
-  constructor(props: ErrorBoundaryTypes) {
+class ErrorBoundary extends React.Component<{}, Props> {
+  constructor(props: Props) {
     super(props);
     this.state = { error: null, errorInfo: null };
   }
 
-  componentDidCatch(error: any, errorInfo: any) {
-    this.setState({
-      error,
-      errorInfo,
-    });
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
+    this.setState({ error, errorInfo });
   }
 
-  render() {
+  render(): React.ReactNode {
     if (this.state.errorInfo) {
       return (
         <div>
-          <h2>Произошла ошибка при загрузки страницы</h2>
-          <p>Обновите страницу или повторите запрос позже.</p>
-          <p>Приносим извинения за доставленные неудобства</p>
+          <h2>Ошибка при загрузке приложения</h2>
+          <p>Подробнее см. ниже</p>
           <div style={{ color: '#aaa' }}>
-            <p>Детали ошибки.</p>
+            <h3>Детали ошибки</h3>
             <details style={{ whiteSpace: 'pre-wrap' }}>
               <p>{this.state.error && this.state.error.toString()}</p>
               <p>{this.state.errorInfo.componentStack}</p>
