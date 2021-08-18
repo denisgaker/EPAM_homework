@@ -12,11 +12,19 @@ MovieData[0].image = RikAndMorti;
 MovieData[1].image = StrangerThings;
 MovieData[2].image = Interstellar;
 
-const MovieList: React.FC = () => {
-  return(
-    <>
+class MovieList extends React.Component {
+  render(): React.ReactNode {
+    if (
+      MovieData[0].image != RikAndMorti ||
+      MovieData[1].image != StrangerThings ||
+      MovieData[2].image != Interstellar
+    ) {
+      throw new Error('Произошла ошибка');
+    }
+    return (
+      <>
         {MovieData.map((movie) => (
-          <div className='MovieCard' key={movie.id}>
+          <div className="MovieCard" key={movie.id}>
             <ImageHelper imagePath={movie.image} />
             <MovieCard
               title={movie.title}
@@ -28,7 +36,8 @@ const MovieList: React.FC = () => {
           </div>
         ))}
       </>
-  )
+    );
+  }
 }
 
 export default MovieList;

@@ -4,6 +4,7 @@ import Header from './header/header/Header';
 import Heading from './header/header/Heading';
 import Search from './header/search/Search';
 import MovieList from './content/MovieList';
+import ErrorBoundary from './content/errorBoundary/ErrorBoundary';
 import Footer from './footer/footer/Footer';
 import SocLinks from './footer/SocLinks';
 import './style.css';
@@ -25,7 +26,9 @@ const App = (): React.ReactElement => {
           searchBtnText = { SearchBtnText }
         />
       </Header>
-      <MovieList />
+      <ErrorBoundary>
+        <MovieList />
+      </ErrorBoundary>
       <Footer>
         <Copyright name={NameApp} />
         <SocLinks />
