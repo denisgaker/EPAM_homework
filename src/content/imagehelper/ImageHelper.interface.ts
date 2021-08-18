@@ -1,3 +1,3 @@
 export interface ImagePathType {
-  imagePath: string
+  imagePath: string;
 }

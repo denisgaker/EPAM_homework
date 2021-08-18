@@ -7,8 +7,8 @@ appContainer.id = 'app';
 document.body.appendChild(appContainer);
 
 ReactDOM.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-    appContainer,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  appContainer
 );

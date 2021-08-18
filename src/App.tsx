@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Datats} from './Data';
+import { Datats } from './Data';
 import Header from './header/header/Header';
 import Heading from './header/header/Heading';
 import Search from './header/search/Search';
@@ -16,18 +16,14 @@ const SearchPlaceholder = Datats.main.searchPlaceholder;
 const SearchBtnText = Datats.main.searchBtnText;
 
 const App = (): React.ReactElement => {
-
-
-
-  
   return (
     <>
       <Header>
-        <Heading name = {NameApp} />
+        <Heading name={NameApp} />
         <Search
-          searchCTA = { SearchCTA }
-          searchPlaceholder = { SearchPlaceholder }
-          searchBtnText = { SearchBtnText }
+          searchCTA={SearchCTA}
+          searchPlaceholder={SearchPlaceholder}
+          searchBtnText={SearchBtnText}
         />
       </Header>
       <ErrorBoundary>

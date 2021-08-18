@@ -1,7 +1,7 @@
-import * as React from "react";
-import MovieCard from "./MovieCard/MovieCard";
-import { Datats } from "../Data";
-import ImageHelper from "./imagehelper/ImageHelper";
+import * as React from 'react';
+import MovieCard from './MovieCard/MovieCard';
+import { Datats } from '../Data';
+import ImageHelper from './imagehelper/ImageHelper';
 import Interstellar from './img/interstellar.jpg';
 import RikAndMorti from './img/rikAndMorti.jpg';
 import StrangerThings from './img/strangerThings.jpg';
