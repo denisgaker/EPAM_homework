@@ -22,6 +22,7 @@ Training application "HETflix"
 - [Error Boundaries](https://ru.reactjs.org/docs/error-boundaries.html)
 - [Тип для componentStack в ErrorBoundary](https://question-it.com/questions/3220446/svojstvo-componentstack-ne-suschestvuet-dlja-tipa-stringts)
 - [componentDidCatch() и static getDerivedStateFromError()](https://ru.reactjs.org/docs/react-component.html#error-handling)
+- [Как правильно типизировать ErrorBoundary](https://stackoverflow.com/questions/63916900/how-to-properly-type-a-react-errorboundary-class-component-in-typescript)
 - [ESLint документация](https://eslint.org/)
 - [Prettier документация](https://prettier.io/docs/en/index.html)
 - [Видео-инструкция по настройке Eslint+Prettier в проекте React+Typescript](https://www.youtube.com/watch?v=4XAGZHbQx74&t=662s)
