@@ -21,6 +21,7 @@ Training application "HETflix"
 - [TypeScript + React документация](https://www.typescriptlang.org/docs/handbook/react.html)
 - [Error Boundaries](https://ru.reactjs.org/docs/error-boundaries.html)
 - [Тип для componentStack в ErrorBoundary](https://question-it.com/questions/3220446/svojstvo-componentstack-ne-suschestvuet-dlja-tipa-stringts)
+- [componentDidCatch() и static getDerivedStateFromError()](https://ru.reactjs.org/docs/react-component.html#error-handling)
 - [ESLint документация](https://eslint.org/)
 - [Prettier документация](https://prettier.io/docs/en/index.html)
 - [Видео-инструкция по настройке Eslint+Prettier в проекте React+Typescript](https://www.youtube.com/watch?v=4XAGZHbQx74&t=662s)
@@ -29,3 +30,5 @@ Training application "HETflix"
 ## Лайфхаки =)
 - Если запустить команду npm с флагом -s, некоторые ошибки перестанут отображаться =)
 - В ErrorBoundary для "componentStack" (this.state.errorInfo.componentStack) используй тип данных "Function" (errorInfo: null | {componentStack: Function})
+## Повторить
+- классы и конструкторы, отдельно super и state
