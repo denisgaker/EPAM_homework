@@ -39,6 +39,12 @@ Training application "HETflix"
 - [Видео-инструкция по настройке Eslint+Prettier в проекте React+Typescript](https://www.youtube.com/watch?v=4XAGZHbQx74&t=662s)
 - [Правильные настройки 'extends' в eslint (настройки из видео частично устарели)](https://github.com/prettier/eslint-config-prettier/blob/main/CHANGELOG.md#version-800-2021-02-21)
 - [Программируем лучше с ESLint, Prettier и TypeScript](https://tproger.ru/translations/setting-up-eslint-and-prettier/)
+### Task 4 "Testing lecture" (lesson4)
+#### Jest
+##### Документация
+- [Jest документация](https://jestjs.io/ru/docs/tutorial-react)
+##### Статьи
+- [Что и как тестировать с помощью Jest и Enzyme. Полная инструкция по тестированию React-компонентов](https://medium.com/devschacht/what-and-how-to-test-with-jest-and-enzyme-full-instruction-on-react-components-testing-d3504f3fbc54)
 ## Лайфхаки =)
 - Если запустить команду npm с флагом -s, некоторые ошибки перестанут отображаться =)
 - В ErrorBoundary для "componentStack" (this.state.errorInfo.componentStack) используй тип данных "Function" (errorInfo: null | {componentStack: Function})
