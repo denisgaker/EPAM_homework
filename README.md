@@ -44,6 +44,7 @@ Training application "HETflix"
 ##### Документация
 - [Jest документация](https://jestjs.io/ru/docs/tutorial-react)
 ##### Статьи
+- [Unit Testing with Typescript and Jest](https://dev.to/muhajirdev/unit-testing-with-typescript-and-jest-2gln)
 - [Что и как тестировать с помощью Jest и Enzyme. Полная инструкция по тестированию React-компонентов](https://medium.com/devschacht/what-and-how-to-test-with-jest-and-enzyme-full-instruction-on-react-components-testing-d3504f3fbc54)
 ## Лайфхаки =)
 - Если запустить команду npm с флагом -s, некоторые ошибки перестанут отображаться =)
