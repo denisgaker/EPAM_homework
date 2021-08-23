@@ -4,7 +4,7 @@ Training application "HETflix"
 - master - основная ветка
 - lesson2 - Task 2 "Webpack lecture"
 - lesson3 - Task 3 "Components lecture (TypeScript, ErrorBoundaries, ESLint+Prettier)"
-- lesson4 - Task 4 "Testing"
+- lesson4 - Task 4 "Testing lecture"
 ## Ссылки по урокам
 ### Task 2 "Webpack lecture" (lesson2)
 #### Документация
