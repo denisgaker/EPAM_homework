@@ -46,6 +46,8 @@ Training application "HETflix"
 ##### Статьи
 - [Unit Testing with Typescript and Jest](https://dev.to/muhajirdev/unit-testing-with-typescript-and-jest-2gln)
 - [Что и как тестировать с помощью Jest и Enzyme. Полная инструкция по тестированию React-компонентов](https://medium.com/devschacht/what-and-how-to-test-with-jest-and-enzyme-full-instruction-on-react-components-testing-d3504f3fbc54)
+#### Enzyme
+- [Enzyme документация](https://rjzaworski.com/2018/03/testing-with-typescript-react-and-enzyme)
 ## Лайфхаки =)
 - Если запустить команду npm с флагом -s, некоторые ошибки перестанут отображаться =)
 - В ErrorBoundary для "componentStack" (this.state.errorInfo.componentStack) используй тип данных "Function" (errorInfo: null | {componentStack: Function})
