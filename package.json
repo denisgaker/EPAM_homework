@@ -4,7 +4,7 @@
   "description": "Training application \"HETflix\"\r ## Ветки\r - master - основная ветка\r - lesson2 - Task 2 \"Webpack lecture\"\r ## Ссылки по урокам\r ### Task 2 \"Webpack lecture\" (lesson2)\r - [Документация Webpack](https://webpack.js.org/guides/getting-started/)",
   "private": true,
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "start": "webpack serve --config webpack.dev.js",
     "build": "webpack --config wepback.prod.js",
     "lint": "eslint src --fix",

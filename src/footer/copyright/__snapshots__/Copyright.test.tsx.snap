@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Copyright information 1`] = `
+<p>
+  ©
+   2021 HETflix  | All right reserved
+</p>
+`;
