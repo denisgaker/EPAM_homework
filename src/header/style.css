@@ -43,7 +43,7 @@ header h1 {
   -webkit-justify-content: space-between;
 }
 
-.searchBy > label > input + span,
+/* .searchBy > label > input + span,
 .searchBy > span {
   padding: 5px 10px;
   color: #fff;
@@ -77,8 +77,19 @@ header h1 {
   background-color: #fff;
   color: #ff0000;
   transition: background-color ease .3s, color ease .3s;
+} */
+
+.searchBy > span {
+  padding: 5px 10px;
+  color: #fff;
 }
 
+.searchByBtn {
+  margin: 0 5px;
+}
+
+button#searchByTitle,
+button#searchByGenre,
 button#headerSearchBtn {
   min-height: 31px;
   padding: 5px 10px;
@@ -89,6 +100,12 @@ button#headerSearchBtn {
   transition: background-color ease .3s, color ease .3s;
 }
 
+button#searchByTitle:hover,
+button#searchByTitle:focus,
+button#searchByTitle.active,
+button#searchByGenre:hover,
+button#searchByGenre:focus,
+button#searchByGenre.active,
 button#headerSearchBtn:hover,
 button#headerSearchBtn:focus {
   background-color: #fff;

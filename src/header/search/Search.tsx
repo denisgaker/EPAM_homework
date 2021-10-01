@@ -18,14 +18,20 @@ const Search: React.FC<SearchProps> = ({
       <div className="searchCtrl">
         <div className="searchBy">
           <span>Search by</span>
-          <label htmlFor="searchByTitle">
+          {/* <label htmlFor="searchByTitle">
             <input type="radio" name="searchBy_ctrl" id="searchByTitle" />
             <span>Title</span>
           </label>
           <label htmlFor="searchByGenre">
             <input type="radio" name="searchBy_ctrl" id="searchByGenre" />
             <span>Genre</span>
-          </label>
+          </label> */}
+          <button type="button" className="searchByBtn" id="searchByTitle">
+            Title
+          </button>
+          <button type="button" className="searchByBtn" id="searchByGenre">
+            Genre
+          </button>
         </div>
         <button type="button" id="headerSearchBtn">
           {searchBtnText}
