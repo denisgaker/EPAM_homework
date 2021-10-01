@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 type mainType = {
   [key in MainKey]: string;
 };
