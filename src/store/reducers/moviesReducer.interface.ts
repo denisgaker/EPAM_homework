@@ -7,6 +7,13 @@ export interface MoviesState {
 
 interface MovieType {
   title: string;
+  id: number;
+  // eslint-disable-next-line camelcase
+  poster_path: string;
+  overview: string;
+  // eslint-disable-next-line camelcase
+  release_date: string;
+  genres: [];
 }
 
 interface DataMovies {

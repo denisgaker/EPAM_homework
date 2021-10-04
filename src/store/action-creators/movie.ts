@@ -6,7 +6,7 @@ export const fetchMovies = () => {
   return async (dispatch: Dispatch<MovieAction>) => {
     try {
       dispatch({ type: MoviesActionTypes.FETCH_MOVIES });
-      const response = await axios.get('https://reactjs-cdp.herokuapp.com/movies');
+      const response = await axios.get('https://reactjs-cdp.herokuapp.com/movies?limit=9');
       dispatch({ type: MoviesActionTypes.FETCH_MOVIES_SUCCESS, payload: response.data });
     } catch (e) {
       dispatch({

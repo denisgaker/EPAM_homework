@@ -1,6 +1,6 @@
 export interface MovieCardProps {
   title: string;
   description: string;
-  year: number;
+  year: string | number;
   genre: string;
 }
