@@ -1,9 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useTypeSelector } from '../hooks/useTypeSelector';
 // import { useSelector } from 'react-redux';
 
 const MovieList2: React.FC = () => {
-  const state = useSelector((state) => state);
+  const state = useTypeSelector((state) => state.movies);
   console.log(state);
   return <div>MovieList2</div>;
 };
