@@ -40,6 +40,7 @@ interface MoviesType extends Omit<MovieTypeStrings, 'sumField'> {
   year: number;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 enum MoviesKey {
   title = 'title',
   description = 'description',

@@ -1,16 +1,21 @@
+/* eslint-disable no-unused-vars */
 export interface MoviesState {
-  movies: unknown[];
+  movies: MovieType[];
   loading: boolean;
   error: null | string;
 }
 
-// eslint-disable-next-line no-unused-vars
+interface MovieType {
+  title: string;
+}
+
+interface DataMovies {
+  data: [];
+}
+
 export enum MoviesActionTypes {
-  // eslint-disable-next-line no-unused-vars
   FETCH_MOVIES = 'FETCH_MOVIES',
-  // eslint-disable-next-line no-unused-vars
   FETCH_MOVIES_SUCCESS = 'FETCH_MOVIES_SUCCESS',
-  // eslint-disable-next-line no-unused-vars
   FETCH_MOVIES_ERROR = 'FETCH_MOVIES_ERROR',
 }
 
@@ -20,7 +25,7 @@ interface FetchMoviesAction {
 
 interface FetchMoviesSuccessAction {
   type: MoviesActionTypes.FETCH_MOVIES_SUCCESS;
-  payload: unknown[];
+  payload: DataMovies;
 }
 
 interface FetchMoviesErrorAction {

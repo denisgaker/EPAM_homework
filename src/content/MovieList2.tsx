@@ -1,55 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useTypeSelector } from '../hooks/useTypeSelector';
-// import { useSelector } from 'react-redux';
+import { fetchMovies } from '../store/action-creators/movie';
 
 const MovieList2: React.FC = () => {
-  const state = useTypeSelector((state) => state.movies);
-  console.log(state);
-  return <div>MovieList2</div>;
+  const { error, loading, movies } = useTypeSelector((state) => state.movies);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchMovies());
+  }, [dispatch]);
+  console.log('movies: \n', movies[0] && movies[0].title);
+  if (loading) {
+    return <h2>Идёт загрузка</h2>;
+  }
+  if (error) {
+    return <h2>{error}</h2>;
+  }
+  return <div>movies</div>;
 };
 
 export default MovieList2;
-
-/* import * as React from 'react';
-import MovieCard from './MovieCard/MovieCard';
-import { Datats } from '../Data';
-import ImageHelper from './imagehelper/ImageHelper';
-import Interstellar from './img/interstellar.jpg';
-import RikAndMorti from './img/rikAndMorti.jpg';
-import StrangerThings from './img/strangerThings.jpg';
-import './style.css';
-
-const MovieData = Datats.movies;
-MovieData[0].image = RikAndMorti;
-MovieData[1].image = StrangerThings;
-MovieData[2].image = Interstellar;
-
-class MovieList extends React.Component {
-  render(): React.ReactNode {
-    if (
-      MovieData[0].image != RikAndMorti ||
-      MovieData[1].image != StrangerThings ||
-      MovieData[2].image != Interstellar
-    ) {
-      throw new Error('Произошла ошибка');
-    }
-    return (
-      <>
-        {MovieData.map((movie) => (
-          <div className="MovieCard" key={movie.id}>
-            <ImageHelper imagePath={movie.image} />
-            <MovieCard
-              title={movie.title}
-              description={movie.description}
-              year={movie.year}
-              genre={movie.genre}
-              key={movie.id}
-            />
-          </div>
-        ))}
-      </>
-    );
-  }
-}
-
-export default MovieList; */
