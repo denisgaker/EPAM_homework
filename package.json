@@ -1,5 +1,5 @@
 {
-  "name": "EPAM_homework",
+  "name": "epam_homework",
   "jest": {
     "verbose": true
   },
