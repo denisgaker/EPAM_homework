@@ -1,17 +1,18 @@
+/* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 export interface MoviesState {
   movies: MovieType[];
   loading: boolean;
   error: null | string;
+  page: number;
+  limit: number;
 }
 
 interface MovieType {
   title: string;
   id: number;
-  // eslint-disable-next-line camelcase
   poster_path: string;
   overview: string;
-  // eslint-disable-next-line camelcase
   release_date: string;
   genres: [];
 }
@@ -24,6 +25,7 @@ export enum MoviesActionTypes {
   FETCH_MOVIES = 'FETCH_MOVIES',
   FETCH_MOVIES_SUCCESS = 'FETCH_MOVIES_SUCCESS',
   FETCH_MOVIES_ERROR = 'FETCH_MOVIES_ERROR',
+  SET_MOVIES_PAGE = 'SET_MOVIES_PAGE',
 }
 
 interface FetchMoviesAction {
@@ -40,4 +42,13 @@ interface FetchMoviesErrorAction {
   payload: string;
 }
 
-export type MovieAction = FetchMoviesAction | FetchMoviesSuccessAction | FetchMoviesErrorAction;
+interface SetMoviesPage {
+  type: MoviesActionTypes.SET_MOVIES_PAGE;
+  payload: number;
+}
+
+export type MovieAction =
+  | FetchMoviesAction
+  | FetchMoviesSuccessAction
+  | FetchMoviesErrorAction
+  | SetMoviesPage;
