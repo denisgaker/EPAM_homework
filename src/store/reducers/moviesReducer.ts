@@ -11,9 +11,9 @@ export const moviesReducer = (state = initialState, action: MovieAction): Movies
     case MoviesActionTypes.FETCH_MOVIES:
       return { ...state, loading: true, error: null };
     case MoviesActionTypes.FETCH_MOVIES_SUCCESS:
-      return { loading: false, error: null, movies: action.payload.data };
+      return { ...state, loading: false, error: null, movies: action.payload.data };
     case MoviesActionTypes.FETCH_MOVIES_ERROR:
-      return { loading: false, error: action.payload, movies: [] };
+      return { ...state, loading: false, error: action.payload, movies: [] };
     default:
       return state;
   }
