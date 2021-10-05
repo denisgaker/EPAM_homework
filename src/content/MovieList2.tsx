@@ -1,17 +1,19 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
+import { useActions } from '../hooks/useActions';
 import { useTypeSelector } from '../hooks/useTypeSelector';
-import { fetchMovies } from '../store/action-creators/movie';
+// import { fetchMovies } from '../store/action-creators/movie';
 import ImageHelper from './imagehelper/ImageHelper';
 import MovieCard from './MovieCard/MovieCard';
 
 const MovieList2: React.FC = () => {
   const { error, loading, movies } = useTypeSelector((state) => state.movies);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
+  const { fetchMovies } = useActions();
 
   useEffect(() => {
-    dispatch(fetchMovies());
-  }, [dispatch]);
+    fetchMovies();
+  }, []);
 
   if (loading) {
     return <h2>Идёт загрузка</h2>;
