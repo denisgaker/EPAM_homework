@@ -7,7 +7,7 @@ export const fetchMovies = (page = 1, limit = 9) => {
     try {
       dispatch({ type: MoviesActionTypes.FETCH_MOVIES });
       const response = await axios.get('https://reactjs-cdp.herokuapp.com/movies', {
-        params: { page: page, limit: limit },
+        params: { offset: page * limit - limit, limit: limit },
       });
       console.log('response: ', response.data);
       dispatch({ type: MoviesActionTypes.FETCH_MOVIES_SUCCESS, payload: response.data });
