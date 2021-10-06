@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
 import { useActions } from '../hooks/useActions';
 import { useTypeSelector } from '../hooks/useTypeSelector';
-// import { fetchMovies } from '../store/action-creators/movie';
 import ImageHelper from './imagehelper/ImageHelper';
 import MovieCard from './MovieCard/MovieCard';
 
+// ! TODO: Попробовать через useRef сравнить fetchMovies разных версий
+// ! TODO: Мемомизировать fetchMovies
+
 const MovieList2: React.FC = () => {
-  const { error, loading, movies } = useTypeSelector((state) => state.movies);
-  // const dispatch = useDispatch();
+  const { error, loading, movies, page, limit } = useTypeSelector((state) => state.movies);
   const { fetchMovies } = useActions();
+  const pages = [1, 2, 3, 4, 5];
 
   useEffect(() => {
-    fetchMovies();
+    fetchMovies(page, limit);
+    console.log('useEffect: ');
   }, []);
 
   if (loading) {
@@ -35,6 +37,13 @@ const MovieList2: React.FC = () => {
           />
         </div>
       ))}
+      <div className="pagination">
+        {pages.map((p) => (
+          <div onClick={() => fetchMovies(p)} className="page" key={p}>
+            {p}
+          </div>
+        ))}
+      </div>
     </>
   );
 };
