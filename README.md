@@ -5,6 +5,10 @@ Training application "HETflix"
 - lesson2 - Task 2 "Webpack lecture"
 - lesson3 - Task 3 "Components lecture (TypeScript, ErrorBoundaries, ESLint+Prettier)"
 - lesson4 - Task 4 "Testing lecture"
+## ToDo:
+- content/MovieList2.tsx
+- content/imagehelper/ImageHelper.tsx
+
 ## Ссылки по урокам
 ### Task 2 "Webpack lecture" (lesson2)
 #### Документация
