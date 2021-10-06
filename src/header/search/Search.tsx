@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { SearchProps } from './Search.interface';
+import SearchBy from './searchBtns/SearchBy';
 
 const Search: React.FC<SearchProps> = ({
   searchCTA,
@@ -18,20 +19,7 @@ const Search: React.FC<SearchProps> = ({
       <div className="searchCtrl">
         <div className="searchBy">
           <span>Search by</span>
-          {/* <label htmlFor="searchByTitle">
-            <input type="radio" name="searchBy_ctrl" id="searchByTitle" />
-            <span>Title</span>
-          </label>
-          <label htmlFor="searchByGenre">
-            <input type="radio" name="searchBy_ctrl" id="searchByGenre" />
-            <span>Genre</span>
-          </label> */}
-          <button type="button" className="searchByBtn" id="searchByTitle">
-            Title
-          </button>
-          <button type="button" className="searchByBtn" id="searchByGenre">
-            Genre
-          </button>
+          <SearchBy />
         </div>
         <button type="button" id="headerSearchBtn">
           {searchBtnText}

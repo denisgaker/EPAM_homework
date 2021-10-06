@@ -101,10 +101,8 @@ button#headerSearchBtn {
 }
 
 button#searchByTitle:hover,
-button#searchByTitle:focus,
 button#searchByTitle.active,
 button#searchByGenre:hover,
-button#searchByGenre:focus,
 button#searchByGenre.active,
 button#headerSearchBtn:hover,
 button#headerSearchBtn:focus {
