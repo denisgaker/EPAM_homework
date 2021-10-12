@@ -1,5 +1,5 @@
 export interface SearchProps {
-  searchCTA: string;
-  searchPlaceholder: string;
+  searchCTA?: string;
+  searchPlaceholder?: string;
   searchBtnText: string;
 }

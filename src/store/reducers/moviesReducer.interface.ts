@@ -6,6 +6,8 @@ export interface MoviesState {
   error: null | string;
   page: number;
   limit: number;
+  searchBy?: SearchType;
+  query: string;
 }
 
 interface MovieType {
@@ -21,11 +23,28 @@ interface DataMovies {
   data: [];
 }
 
+export enum SearchType {
+  Title = 'title',
+  Genre = 'genre',
+}
+
 export enum MoviesActionTypes {
   FETCH_MOVIES = 'FETCH_MOVIES',
   FETCH_MOVIES_SUCCESS = 'FETCH_MOVIES_SUCCESS',
   FETCH_MOVIES_ERROR = 'FETCH_MOVIES_ERROR',
   SET_MOVIES_PAGE = 'SET_MOVIES_PAGE',
+  SetSearchBy = 'setSearchBy',
+  SetQuery = 'SetQuery',
+}
+
+interface SetSearchQueryAction {
+  type: MoviesActionTypes.SetQuery;
+  payload: string;
+}
+
+interface SetSearchByAction {
+  type: MoviesActionTypes.SetSearchBy;
+  payload: SearchType;
 }
 
 interface FetchMoviesAction {
@@ -51,4 +70,6 @@ export type MovieAction =
   | FetchMoviesAction
   | FetchMoviesSuccessAction
   | FetchMoviesErrorAction
-  | SetMoviesPage;
+  | SetMoviesPage
+  | SetSearchByAction
+  | SetSearchQueryAction;

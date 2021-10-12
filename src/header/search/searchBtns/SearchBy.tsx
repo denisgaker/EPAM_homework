@@ -1,29 +1,18 @@
 import React from 'react';
 import { useActions } from '../../../hooks/useActions';
 import { useTypeSelector } from '../../../hooks/useTypeSelector';
+import { SearchType } from '../../../store/reducers/moviesReducer.interface';
 
 const SearchBy = (): React.ReactElement => {
-  const { searchBy } = useTypeSelector((state) => state.search);
-  const { searchByGenre, searchByTitle } = useActions();
-
+  const { searchBy } = useTypeSelector((state) => state.movies);
+  const { setSearchBy } = useActions();
+  console.log('searchBy: ', searchBy);
   return (
     <>
-      <button
-        onClick={() => searchByTitle()}
-        type="button"
-        className="searchByBtn"
-        id="searchByTitle"
-        data-search={searchBy}
-      >
+      <button type="button" className="searchByBtn" onClick={() => setSearchBy(SearchType.Title)}>
         Title
       </button>
-      <button
-        onClick={() => searchByGenre()}
-        type="button"
-        className="searchByBtn"
-        id="searchByGenre"
-        data-search={searchBy}
-      >
+      <button type="button" className="searchByBtn" onClick={() => setSearchBy(SearchType.Genre)}>
         Genre
       </button>
     </>

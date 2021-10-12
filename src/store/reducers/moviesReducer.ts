@@ -6,10 +6,16 @@ const initialState: MoviesState = {
   error: null,
   page: 1,
   limit: 9,
+  searchBy: undefined,
+  query: '',
 };
 
 export const moviesReducer = (state = initialState, action: MovieAction): MoviesState => {
   switch (action.type) {
+    case MoviesActionTypes.SetSearchBy:
+      return { ...state, searchBy: action.payload };
+    case MoviesActionTypes.SetQuery:
+      return { ...state, query: action.payload };
     case MoviesActionTypes.FETCH_MOVIES:
       return { ...state, loading: true, error: null };
     case MoviesActionTypes.FETCH_MOVIES_SUCCESS:

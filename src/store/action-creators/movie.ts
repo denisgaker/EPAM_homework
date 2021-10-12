@@ -1,13 +1,26 @@
 import { Dispatch } from 'react';
 import axios from 'axios';
-import { MovieAction, MoviesActionTypes } from '../reducers/moviesReducer.interface';
+import { MovieAction, MoviesActionTypes, SearchType } from '../reducers/moviesReducer.interface';
 
-export const fetchMovies = (page = 1, limit = 9) => {
+interface Params {
+  offset: number;
+  limit: number;
+  search?: string | undefined;
+  searchBy?: string;
+}
+
+export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false') => {
   return async (dispatch: Dispatch<MovieAction>): Promise<void> => {
     try {
       dispatch({ type: MoviesActionTypes.FETCH_MOVIES });
+      const params: Params = {
+        offset: page * limit - limit,
+        limit: limit,
+      };
+      if (query !== '' && query !== undefined) params.search = query;
+      if (searchBy !== 'false') params.searchBy = searchBy;
       const response = await axios.get('https://reactjs-cdp.herokuapp.com/movies', {
-        params: { offset: page * limit - limit, limit: limit },
+        params,
       });
       dispatch({ type: MoviesActionTypes.FETCH_MOVIES_SUCCESS, payload: response.data });
     } catch (e) {
@@ -16,6 +29,18 @@ export const fetchMovies = (page = 1, limit = 9) => {
         payload: 'Произошла ошибка при загрузке страницы',
       });
     }
+  };
+};
+
+export const setSearchBy = (value: SearchType) => {
+  return (dispatch: Dispatch<MovieAction>): void => {
+    dispatch({ type: MoviesActionTypes.SetSearchBy, payload: value });
+  };
+};
+
+export const setQuery = (query: string) => {
+  return (dispatch: Dispatch<MovieAction>): void => {
+    dispatch({ type: MoviesActionTypes.SetQuery, payload: query });
   };
 };
 
