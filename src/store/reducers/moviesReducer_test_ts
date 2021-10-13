@@ -1,0 +1,19 @@
+/* import { moviesReducer } from './moviesReducer';
+import { MoviesState, SearchType } from './moviesReducer.interface';
+import { setSearchBy } from '../action-creators/movie';
+
+it('SearchBy shuod be "title"', () => {
+  const initialState: MoviesState = {
+    movies: [],
+    loading: false,
+    error: null,
+    page: 1,
+    limit: 9,
+    searchBy: undefined,
+    query: '',
+  };
+  const action = setSearchBy(SearchType.Title);
+  const newState = moviesReducer(initialState, setSearchBy(SearchType.Title));
+
+  expect(newState.searchBy).toBe('title');
+}); */
