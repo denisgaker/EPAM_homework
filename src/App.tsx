@@ -3,7 +3,6 @@ import { Datats } from './Data';
 import Header from './header/header/Header';
 import Heading from './header/header/Heading';
 import Search from './header/search/Search';
-// import MovieList2 from './content/MovieList2';
 // import MovieList from './content/MovieList';
 // import ErrorBoundary from './errorBoundary/ErrorBoundary';
 import Footer from './footer/footer/Footer';
@@ -12,6 +11,7 @@ import './style.css';
 import Copyright from './footer/copyright/Copyright';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Default from './pages/Default';
+import MovieList2 from './content/MovieList2';
 
 const NameApp = Datats.main.nameApp;
 const SearchCTA = Datats.main.searchCTA;
@@ -31,6 +31,7 @@ const App = (): React.ReactElement => (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Default} />
+        <Route path="/films" component={MovieList2} />
       </Switch>
     </BrowserRouter>
     <Footer>
