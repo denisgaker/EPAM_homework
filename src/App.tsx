@@ -20,15 +20,15 @@ const SearchBtnText = Datats.main.searchBtnText;
 
 const App = (): React.ReactElement => (
   <>
-    <Header>
-      <Heading name={NameApp} />
-      <Search
-        searchCTA={SearchCTA}
-        searchPlaceholder={SearchPlaceholder}
-        searchBtnText={SearchBtnText}
-      />
-    </Header>
     <BrowserRouter>
+      <Header>
+        <Heading name={NameApp} />
+        <Search
+          searchCTA={SearchCTA}
+          searchPlaceholder={SearchPlaceholder}
+          searchBtnText={SearchBtnText}
+        />
+      </Header>
       <Switch>
         <Route exact path="/" component={Default} />
         <Route path="/films" component={MovieList2} />
