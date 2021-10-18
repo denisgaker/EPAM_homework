@@ -63,4 +63,5 @@ Training application "HETflix"
 ### Task 6 "Routing" (lesson6)
 #### Документация
 - [Документация (оф. сайт)](https://reactrouter.com/web/guides/quick-start)
-#### Статьи
+#### Видео
+- [React Redux - Роутинг\Маршрутизация по страницам. React-router-dom, Router, Switch, Redirect](https://www.youtube.com/watch?v=gs1hLntyczo)
