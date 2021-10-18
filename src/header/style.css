@@ -88,8 +88,8 @@ header h1 {
   margin: 0 5px;
 }
 
-button#searchByTitle,
-button#searchByGenre,
+button.searchByBtn,
+button.searchByBtn,
 button#headerSearchBtn {
   min-height: 31px;
   padding: 5px 10px;
@@ -100,12 +100,14 @@ button#headerSearchBtn {
   transition: background-color ease .3s, color ease .3s;
 }
 
-button#searchByTitle:hover,
-button#searchByTitle.active,
+button.searchByBtn:hover,
+button.searchByBtn:focus,
 button#searchByGenre:hover,
 button#searchByGenre.active,
 button#headerSearchBtn:hover,
-button#headerSearchBtn:focus {
+button#headerSearchBtn:focus,
+button.searchByBtn.title[data-state="title"],
+button.searchByBtn.genre[data-state="genre"] {
   background-color: #fff;
   color: #ff0000;
   transition: background-color ease .3s, color ease .3s;

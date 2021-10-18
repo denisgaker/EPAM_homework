@@ -9,10 +9,20 @@ const SearchBy = (): React.ReactElement => {
   console.log('searchBy: ', searchBy);
   return (
     <>
-      <button type="button" className="searchByBtn" onClick={() => setSearchBy(SearchType.Title)}>
+      <button
+        type="button"
+        className="searchByBtn title"
+        data-state={searchBy}
+        onClick={() => setSearchBy(SearchType.Title)}
+      >
         Title
       </button>
-      <button type="button" className="searchByBtn" onClick={() => setSearchBy(SearchType.Genre)}>
+      <button
+        type="button"
+        className="searchByBtn genre"
+        data-state={searchBy}
+        onClick={() => setSearchBy(SearchType.Genre)}
+      >
         Genre
       </button>
     </>
