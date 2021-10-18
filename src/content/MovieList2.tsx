@@ -3,6 +3,7 @@ import { useActions } from '../hooks/useActions';
 import { useTypeSelector } from '../hooks/useTypeSelector';
 import ImageHelper from './imagehelper/ImageHelper';
 import MovieCard from './MovieCard/MovieCard';
+import { useHistory } from 'react-router-dom';
 
 // ! TODO: Попробовать через useRef сравнить fetchMovies разных версий
 // ! TODO: Мемомизировать fetchMovies
@@ -11,6 +12,7 @@ const MovieList2: React.FC = () => {
   const { error, loading, movies, page, limit } = useTypeSelector((state) => state.movies);
   const { fetchMovies } = useActions();
   const pages = [1, 2, 3, 4, 5];
+  const history = useHistory();
 
   useEffect(() => {
     fetchMovies(page, limit);
@@ -26,7 +28,11 @@ const MovieList2: React.FC = () => {
   return (
     <>
       {movies.map((movie) => (
-        <div className="MovieCard" key={movie.id}>
+        <div
+          className="MovieCard"
+          key={movie.id}
+          onClick={() => history.push('/films/' + movie.id)}
+        >
           <ImageHelper imagePath={movie.poster_path} />
           <MovieCard
             title={movie.title}
