@@ -1,18 +1,24 @@
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
+// eslint-disable-next-line no-undef
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (env) => {
   console.log(
-      'Goal: ', env.goal,
-      '\nProduction: ', env.production,
-      '\nmySecretKey: ', env.mySecretKey,
+    'Goal: ',
+    env.goal,
+    '\nProduction: ',
+    env.production,
+    '\nmySecretKey: ',
+    env.mySecretKey
   );
   return {
     mode: env.production ? 'production' : 'development',
     devtool: env.production ? false : 'inline-source-map',
     entry: './src/index.tsx',
-    devServer: env.production ? {contentBase: false} : {contentBase: './dist'},
+    devServer: env.production ? { contentBase: false } : { contentBase: './dist' },
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
