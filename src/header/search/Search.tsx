@@ -3,6 +3,7 @@ import { useActions } from '../../hooks/useActions';
 import { useTypeSelector } from '../../hooks/useTypeSelector';
 import { SearchProps } from './Search.interface';
 import SearchBy from './searchBtns/SearchBy';
+import { NavLink } from 'react-router-dom';
 
 const Search: React.FC<SearchProps> = ({
   searchCTA,
@@ -32,7 +33,7 @@ const Search: React.FC<SearchProps> = ({
           id="headerSearchBtn"
           onClick={() => fetchMovies(page, limit, query, searchBy)}
         >
-          {searchBtnText}
+          <NavLink to={'/films'}>{searchBtnText}</NavLink>
         </button>
       </div>
     </div>
