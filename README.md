@@ -5,6 +5,8 @@ Training application "HETflix"
 - lesson2 - Task 2 "Webpack lecture"
 - lesson3 - Task 3 "Components lecture (TypeScript, ErrorBoundaries, ESLint+Prettier)"
 - lesson4 - Task 4 "Testing lecture"
+- lesson5 - Task 5 "Flux + Redux"
+- lesson6 - Task 6 "Routing"
 ## ToDo:
 - content/MovieList2.tsx
 - content/imagehelper/ImageHelper.tsx
@@ -57,3 +59,8 @@ Training application "HETflix"
 - В ErrorBoundary для "componentStack" (this.state.errorInfo.componentStack) используй тип данных "Function" (errorInfo: null | {componentStack: Function})
 ## Повторить
 - классы и конструкторы, отдельно super и state
+### Task 5 "Flux + Redux" (lesson5)
+### Task 6 "Routing" (lesson6)
+#### Документация
+- [Документация (оф. сайт)](https://reactrouter.com/web/guides/quick-start)
+#### Статьи
