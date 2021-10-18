@@ -1,4 +1,6 @@
-const {merge} = require('webpack-merge');
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -6,6 +8,7 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
-    open: true
+    open: true,
+    historyApiFallback: true,
   },
 });
