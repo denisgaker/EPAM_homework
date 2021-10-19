@@ -6,7 +6,6 @@ import { SearchType } from '../../../store/reducers/moviesReducer.interface';
 const SearchBy = (): React.ReactElement => {
   const { searchBy } = useTypeSelector((state) => state.movies);
   const { setSearchBy } = useActions();
-  console.log('searchBy: ', searchBy);
   return (
     <>
       <button

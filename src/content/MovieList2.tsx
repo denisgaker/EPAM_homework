@@ -13,6 +13,8 @@ const MovieList2: React.FC = () => {
   const { fetchMovies } = useActions();
   const pages = [1, 2, 3, 4, 5];
   const history = useHistory();
+  // console.log('movies: \n', movies);
+  // console.log('history:', history);
 
   useEffect(() => {
     fetchMovies(page, limit);
