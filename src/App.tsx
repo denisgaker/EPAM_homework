@@ -7,10 +7,11 @@ import Footer from './footer/footer/Footer';
 import SocLinks from './footer/SocLinks';
 import './style.css';
 import Copyright from './footer/copyright/Copyright';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import DefaultPage from './pages/DefaultPage';
 import MovieList2 from './content/MovieList2';
 import MoviePage from './pages/MoviePage';
+import Page404 from './pages/Page404';
 
 const NameApp = Datats.main.nameApp;
 const SearchCTA = Datats.main.searchCTA;
@@ -32,6 +33,8 @@ const App = (): React.ReactElement => (
         <Route exact path="/" component={DefaultPage} />
         <Route exact path="/films" component={MovieList2} />
         <Route path="/films/:film" component={MoviePage} />
+        <Route path="/404" component={Page404} />
+        <Redirect to="/404" />
       </Switch>
     </Router>
     <Footer>
