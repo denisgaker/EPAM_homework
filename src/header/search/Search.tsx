@@ -33,7 +33,9 @@ const Search: React.FC<SearchProps> = ({
           id="headerSearchBtn"
           onClick={() => fetchMovies(page, limit, query, searchBy)}
         >
-          <NavLink to={'/films'}>{searchBtnText}</NavLink>
+          <NavLink to={{ pathname: '/films', search: `?searchBy=${searchBy}&query=${query}` }}>
+            {searchBtnText}
+          </NavLink>
         </button>
       </div>
     </div>
