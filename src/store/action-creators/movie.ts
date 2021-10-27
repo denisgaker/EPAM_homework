@@ -9,7 +9,7 @@ interface Params {
   searchBy?: string;
 }
 
-export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false') => {
+export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false', movieId = '') => {
   return async (dispatch: Dispatch<MovieAction>): Promise<void> => {
     try {
       dispatch({ type: MoviesActionTypes.FETCH_MOVIES });
@@ -17,12 +17,19 @@ export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false')
         offset: page * limit - limit,
         limit: limit,
       };
-      if (query !== '' && query !== undefined) params.search = query;
-      if (searchBy !== 'false') params.searchBy = searchBy;
-      const response = await axios.get('https://reactjs-cdp.herokuapp.com/movies', {
-        params,
-      });
-      dispatch({ type: MoviesActionTypes.FETCH_MOVIES_SUCCESS, payload: response.data });
+      if (movieId !== '' && movieId !== undefined) {
+        console.log('Загрузка одного фильма');
+        const response = await axios.get(`https://reactjs-cdp.herokuapp.com/movies/${movieId}`);
+        dispatch({ type: MoviesActionTypes.FETCH_MOVIES_SUCCESS, payload: response.data });
+      } else {
+        console.log('Загрузка результатов поиска');
+        if (query !== '' && query !== undefined) params.search = query;
+        if (searchBy !== 'false') params.searchBy = searchBy;
+        const response = await axios.get('https://reactjs-cdp.herokuapp.com/movies', {
+          params,
+        });
+        dispatch({ type: MoviesActionTypes.FETCH_MOVIES_SUCCESS, payload: response.data });
+      }
     } catch (e) {
       dispatch({
         type: MoviesActionTypes.FETCH_MOVIES_ERROR,
@@ -41,6 +48,12 @@ export const setSearchBy = (value: SearchType) => {
 export const setQuery = (query: string) => {
   return (dispatch: Dispatch<MovieAction>): void => {
     dispatch({ type: MoviesActionTypes.SetQuery, payload: query });
+  };
+};
+
+export const setMovieId = (movieId: string) => {
+  return (dispatch: Dispatch<MovieAction>): void => {
+    dispatch({ type: MoviesActionTypes.FetchMovieId, payload: movieId });
   };
 };
 

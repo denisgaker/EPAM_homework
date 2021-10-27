@@ -1,4 +1,4 @@
-import { MoviesState, MoviesActionTypes, MovieAction } from './moviesReducer.interface';
+import { MoviesState, MoviesActionTypes, MovieAction, SearchType } from './moviesReducer.interface';
 
 const initialState: MoviesState = {
   movies: [],
@@ -6,12 +6,15 @@ const initialState: MoviesState = {
   error: null,
   page: 1,
   limit: 9,
-  searchBy: undefined,
+  searchBy: SearchType.Title,
   query: '',
+  movieId: '', // Для хранения id фильма
 };
 
 export const moviesReducer = (state = initialState, action: MovieAction): MoviesState => {
   switch (action.type) {
+    case MoviesActionTypes.FetchMovieId:
+      return { ...state, loading: false, error: null, movieId: action.payload };
     case MoviesActionTypes.SetSearchBy:
       return { ...state, searchBy: action.payload };
     case MoviesActionTypes.SetQuery:

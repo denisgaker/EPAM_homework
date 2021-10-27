@@ -30,11 +30,7 @@ const MovieList2: React.FC = () => {
   return (
     <>
       {movies.map((movie) => (
-        <div
-          className="MovieCard"
-          key={movie.id}
-          onClick={() => history.push('/films/' + movie.id)}
-        >
+        <div className="MovieCard" key={movie.id} onClick={() => history.push('/film/' + movie.id)}>
           <ImageHelper imagePath={movie.poster_path} />
           <MovieCard
             title={movie.title}

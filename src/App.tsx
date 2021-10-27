@@ -32,7 +32,7 @@ const App = (): React.ReactElement => (
       <Switch>
         <Route exact path="/" component={DefaultPage} />
         <Route exact path="/films" component={MovieList2} />
-        <Route path="/films/:film" component={MoviePage} />
+        <Route path="/film/:film" component={MoviePage} />
         <Route path="/404" component={Page404} />
         <Redirect to="/404" />
       </Switch>
