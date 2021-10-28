@@ -9,6 +9,7 @@ export interface MoviesState {
   searchBy?: SearchType;
   query: string;
   movieId: string; // Для хранения id фильма
+  movie: MovieType; // Для хранения данных по фильму
 }
 
 /* // Интерфейс для запроса конкретного фильма по ID
@@ -41,15 +42,21 @@ export enum MoviesActionTypes {
   FETCH_MOVIES = 'FETCH_MOVIES',
   FETCH_MOVIES_SUCCESS = 'FETCH_MOVIES_SUCCESS',
   FETCH_MOVIES_ERROR = 'FETCH_MOVIES_ERROR',
+  FetchMovieForIdSuccess = 'FetchMovieForIdSuccess', // Запрос фильма по id
   SET_MOVIES_PAGE = 'SET_MOVIES_PAGE',
   SetSearchBy = 'setSearchBy',
   SetQuery = 'SetQuery',
-  FetchMovieId = 'FetchMovieId', // Запрос фльма по id
+  SetMovieId = 'SetMovieId', // Сохранение в state id фильма
 }
 
-// Запрос фльма по id
-interface FetchMovieIdAction {
-  type: MoviesActionTypes.FetchMovieId;
+interface FetchMovieForIdAction {
+  type: MoviesActionTypes.FetchMovieForIdSuccess;
+  payload: MovieType;
+}
+
+// Сохранение в state id фильма
+interface SetMovieIdAction {
+  type: MoviesActionTypes.SetMovieId;
   payload: string;
 }
 
@@ -89,4 +96,5 @@ export type MovieAction =
   | SetMoviesPage
   | SetSearchByAction
   | SetSearchQueryAction
-  | FetchMovieIdAction; // Запрос фльма по id
+  | SetMovieIdAction // Сохранение в state id фильма
+  | FetchMovieForIdAction; // Запрос фильма по id

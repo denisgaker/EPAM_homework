@@ -8,13 +8,25 @@ const initialState: MoviesState = {
   limit: 9,
   searchBy: SearchType.Title,
   query: '',
-  movieId: '', // Для хранения id фильма
+  // Для хранения id фильма
+  movieId: '',
+  // Для хранения данных по фильму
+  movie: {
+    title: '',
+    genres: [],
+    id: null,
+    overview: '',
+    poster_path: '',
+    release_date: '',
+  },
 };
 
 export const moviesReducer = (state = initialState, action: MovieAction): MoviesState => {
   switch (action.type) {
-    case MoviesActionTypes.FetchMovieId:
-      return { ...state, loading: false, error: null, movieId: action.payload };
+    case MoviesActionTypes.FetchMovieForIdSuccess:
+      return { ...state, loading: false, error: null, movie: action.payload };
+    case MoviesActionTypes.SetMovieId:
+      return { ...state, loading: false, error: null, movieId: action.payload }; // Сохранение в state id фильма
     case MoviesActionTypes.SetSearchBy:
       return { ...state, searchBy: action.payload };
     case MoviesActionTypes.SetQuery:

@@ -9,7 +9,7 @@ interface Params {
   searchBy?: string;
 }
 
-export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false', movieId = '') => {
+export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false') => {
   return async (dispatch: Dispatch<MovieAction>): Promise<void> => {
     try {
       dispatch({ type: MoviesActionTypes.FETCH_MOVIES });
@@ -17,19 +17,27 @@ export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false',
         offset: page * limit - limit,
         limit: limit,
       };
-      if (movieId !== '' && movieId !== undefined) {
-        console.log('Загрузка одного фильма');
-        const response = await axios.get(`https://reactjs-cdp.herokuapp.com/movies/${movieId}`);
-        dispatch({ type: MoviesActionTypes.FETCH_MOVIES_SUCCESS, payload: response.data });
-      } else {
-        console.log('Загрузка результатов поиска');
-        if (query !== '' && query !== undefined) params.search = query;
-        if (searchBy !== 'false') params.searchBy = searchBy;
-        const response = await axios.get('https://reactjs-cdp.herokuapp.com/movies', {
-          params,
-        });
-        dispatch({ type: MoviesActionTypes.FETCH_MOVIES_SUCCESS, payload: response.data });
-      }
+      if (query !== '' && query !== undefined) params.search = query;
+      if (searchBy !== 'false') params.searchBy = searchBy;
+      const response = await axios.get('https://reactjs-cdp.herokuapp.com/movies', {
+        params,
+      });
+      dispatch({ type: MoviesActionTypes.FETCH_MOVIES_SUCCESS, payload: response.data });
+    } catch (e) {
+      dispatch({
+        type: MoviesActionTypes.FETCH_MOVIES_ERROR,
+        payload: 'Произошла ошибка при загрузке страницы',
+      });
+    }
+  };
+};
+
+export const fetchMovieForId = (movieId: string) => {
+  return async (dispatch: Dispatch<MovieAction>): Promise<void> => {
+    try {
+      const response = await axios.get(`https://reactjs-cdp.herokuapp.com/movies/${movieId}`);
+      dispatch({ type: MoviesActionTypes.FetchMovieForIdSuccess, payload: response.data });
+      console.log('response.data:\n', response.data);
     } catch (e) {
       dispatch({
         type: MoviesActionTypes.FETCH_MOVIES_ERROR,
@@ -51,9 +59,10 @@ export const setQuery = (query: string) => {
   };
 };
 
+// Сохранение в state id фильма
 export const setMovieId = (movieId: string) => {
   return (dispatch: Dispatch<MovieAction>): void => {
-    dispatch({ type: MoviesActionTypes.FetchMovieId, payload: movieId });
+    dispatch({ type: MoviesActionTypes.SetMovieId, payload: movieId });
   };
 };
 

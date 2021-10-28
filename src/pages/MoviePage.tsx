@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import ImageHelper from '../content/imagehelper/ImageHelper';
 import { useActions } from '../hooks/useActions';
 import { useTypeSelector } from '../hooks/useTypeSelector';
 import './style.css';
@@ -10,14 +11,21 @@ interface Film {
 
 const MoviePage = (): React.ReactElement => {
   const film: Film = useParams();
-  const { setMovieId, fetchMovies } = useActions();
-  const { page, limit, movieId } = useTypeSelector((state) => state.movies);
-  console.log('movieId: ', movieId);
+  const { setMovieId, fetchMovieForId } = useActions();
+  const { movieId, movie } = useTypeSelector((state) => state.movies);
   useEffect(() => {
     setMovieId(film.film);
-    fetchMovies(page, limit, movieId);
+    fetchMovieForId(movieId);
   }, []);
-  return <h1>Страница с фильмом (id: {film.film})</h1>;
+  return (
+    <div className="filmPage">
+      <ImageHelper imagePath={movie.poster_path} />
+      <div className="filmDesc">
+        <h1>{movie.title}</h1>
+        <p>{movie.overview}</p>
+      </div>
+    </div>
+  );
 };
 
 export default MoviePage;

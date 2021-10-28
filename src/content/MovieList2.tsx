@@ -18,7 +18,6 @@ const MovieList2: React.FC = () => {
 
   useEffect(() => {
     fetchMovies(page, limit);
-    console.log('useEffect: ');
   }, []);
 
   if (loading) {
