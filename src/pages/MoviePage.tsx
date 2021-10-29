@@ -5,20 +5,23 @@ import { useActions } from '../hooks/useActions';
 import { useTypeSelector } from '../hooks/useTypeSelector';
 import './style.css';
 
-interface Film {
+interface IdFromUrl {
   film: string;
 }
 
 const MoviePage = (): React.ReactElement => {
-  const film: Film = useParams();
-  const { setMovieId, fetchMovieForId } = useActions();
-  const { movieId, movie } = useTypeSelector((state) => state.movies);
+  const urlParams: IdFromUrl = useParams();
+  const { fetchMovieForId } = useActions();
+  const { movie } = useTypeSelector((state) => state.movies);
   useEffect(() => {
-    setMovieId(film.film);
-    fetchMovieForId(movieId);
+    fetchMovieForId(urlParams.film);
   }, []);
+  console.log('urlParams: ', urlParams.film, '\nТип данных: ', typeof urlParams.film);
   return (
     <div className="filmPage">
+      <h1 style={{ width: '100%', textAlign: 'center' }}>
+        Страница с фильмом | id = {urlParams.film}
+      </h1>
       <ImageHelper imagePath={movie.poster_path} />
       <div className="filmDesc">
         <h1>{movie.title}</h1>
@@ -29,17 +32,3 @@ const MoviePage = (): React.ReactElement => {
 };
 
 export default MoviePage;
-
-/* const thisFilm = movies.filter((m) => {
-   return m.id === +film.film;
- });
- const f = thisFilm[0];
- return (
-   <div className="filmPage">
-     <ImageHelper imagePath={f.poster_path} />
-     <div className="filmDesc">
-       <h1>{f.title}</h1>
-       <p>{f.overview}</p>
-     </div>
-   </div>
- ); */
