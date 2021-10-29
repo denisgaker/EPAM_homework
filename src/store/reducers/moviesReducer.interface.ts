@@ -42,7 +42,9 @@ export enum MoviesActionTypes {
   FETCH_MOVIES = 'FETCH_MOVIES',
   FETCH_MOVIES_SUCCESS = 'FETCH_MOVIES_SUCCESS',
   FETCH_MOVIES_ERROR = 'FETCH_MOVIES_ERROR',
+  FetchMovieForId = 'FetchMovieForId', // Запрос фильма по id
   FetchMovieForIdSuccess = 'FetchMovieForIdSuccess', // Запрос фильма по id
+  FetchMovieForIdError = 'FetchMovieForIdError', // Неудачный запрос фильма по id
   SET_MOVIES_PAGE = 'SET_MOVIES_PAGE',
   SetSearchBy = 'setSearchBy',
   SetQuery = 'SetQuery',
@@ -50,8 +52,17 @@ export enum MoviesActionTypes {
 }
 
 interface FetchMovieForIdAction {
+  type: MoviesActionTypes.FetchMovieForId;
+}
+
+interface FetchMovieForIdSuccessAction {
   type: MoviesActionTypes.FetchMovieForIdSuccess;
   payload: MovieType;
+}
+
+interface FetchMovieForIdErrorAction {
+  type: MoviesActionTypes.FetchMovieForIdError;
+  payload: string;
 }
 
 // Сохранение в state id фильма
@@ -97,4 +108,6 @@ export type MovieAction =
   | SetSearchByAction
   | SetSearchQueryAction
   | SetMovieIdAction // Сохранение в state id фильма
-  | FetchMovieForIdAction; // Запрос фильма по id
+  | FetchMovieForIdAction // Запрос фильма по id
+  | FetchMovieForIdSuccessAction // Успешный запрос фильма по id
+  | FetchMovieForIdErrorAction; // Неудачный запрос фильма по id

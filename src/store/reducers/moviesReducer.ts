@@ -23,8 +23,12 @@ const initialState: MoviesState = {
 
 export const moviesReducer = (state = initialState, action: MovieAction): MoviesState => {
   switch (action.type) {
+    case MoviesActionTypes.FetchMovieForId:
+      return { ...state, loading: true, error: null };
     case MoviesActionTypes.FetchMovieForIdSuccess:
       return { ...state, loading: false, error: null, movie: action.payload };
+    case MoviesActionTypes.FetchMovieForIdError:
+      return { ...state, loading: false, error: action.payload };
     case MoviesActionTypes.SetMovieId:
       return { ...state, loading: false, error: null, movieId: action.payload }; // Сохранение в state id фильма
     case MoviesActionTypes.SetSearchBy:

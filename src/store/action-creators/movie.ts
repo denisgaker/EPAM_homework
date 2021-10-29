@@ -35,12 +35,13 @@ export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false')
 export const fetchMovieForId = (movieId: string) => {
   return async (dispatch: Dispatch<MovieAction>): Promise<void> => {
     try {
+      dispatch({ type: MoviesActionTypes.FetchMovieForId });
       const response = await axios.get(`https://reactjs-cdp.herokuapp.com/movies/${movieId}`);
       dispatch({ type: MoviesActionTypes.FetchMovieForIdSuccess, payload: response.data });
       console.log('response.data:\n', response.data);
     } catch (e) {
       dispatch({
-        type: MoviesActionTypes.FETCH_MOVIES_ERROR,
+        type: MoviesActionTypes.FetchMovieForIdError,
         payload: 'Произошла ошибка при загрузке страницы',
       });
     }
