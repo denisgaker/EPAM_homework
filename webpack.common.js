@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global module require __dirname */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -40,10 +42,10 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-      }
+      },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
-  }
+    extensions: ['.tsx', '.ts', '.js'],
+  },
 };
