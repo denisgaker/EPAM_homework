@@ -14,6 +14,10 @@ const MovieList2: React.FC = () => {
   const pages = [1, 2, 3, 4, 5];
   const { search } = useLocation();
   const searchParamsFromUrl = search.split(/&|=/);
+  /**
+   * Структура массива searchParamsFromUrl:
+   * searchParamsFromUrl: ['?searchBy', 'title', 'query', 'Transformers']
+   */
 
   useEffect(() => {
     fetchMovies(page, limit, searchParamsFromUrl[3], searchParamsFromUrl[1]);
