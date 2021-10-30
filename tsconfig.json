@@ -8,5 +8,8 @@
     "allowJs": true,
     "moduleResolution": "node",
     "esModuleInterop": true
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json"
   }
 }

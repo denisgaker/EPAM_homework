@@ -9,15 +9,8 @@
         "es2021": true
     },
     "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react-hooks/recommended",
-        "plugin:react/recommended",
-        "plugin:import/errors",
-        "plugin:import/warnings",
-        "plugin:import/typescript",
-        "google",
-        "plugin:prettier/recommended"
+        "airbnb-base",
+        "airbnb-typescript/base"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -25,7 +18,8 @@
             "jsx": true
         },
         "ecmaVersion": 12,
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
     "plugins": [
         "react",
