@@ -1,3 +1,3 @@
-export interface copyType {
+export interface CopyType {
   name: string;
 }

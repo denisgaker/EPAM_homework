@@ -23,7 +23,7 @@ const initialState: MoviesState = {
   },
 };
 
-export const moviesReducer = (state = initialState, action: MovieAction): MoviesState => {
+const moviesReducer = (state = initialState, action: MovieAction): MoviesState => {
   switch (action.type) {
     case MoviesActionTypes.FetchMovieForId:
       return { ...state, loading: true, error: null };
@@ -55,3 +55,5 @@ export const moviesReducer = (state = initialState, action: MovieAction): Movies
       return state;
   }
 };
+
+export default moviesReducer;

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-type mainType = {
+type MainType = {
   [key in MainKey]: string;
 };
 
@@ -11,7 +11,7 @@ enum MainKey {
 }
 
 interface DatatsType {
-  main: mainType;
+  main: MainType;
   socialNetworkLinks: SocialNetworkLinksType[];
   movies: MoviesType[];
 }
@@ -49,7 +49,7 @@ enum MoviesKey {
   id = 'id',
 }
 
-export const Datats: DatatsType = {
+const Datats: DatatsType = {
   main: {
     nameApp: 'HETflix',
     searchCTA: 'Find yout movie',
@@ -113,3 +113,5 @@ export const Datats: DatatsType = {
     },
   ],
 };
+
+export default Datats;
