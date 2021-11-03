@@ -1,26 +1,30 @@
 import * as React from 'react';
+import withStyles from 'react-jss';
 import { NavLink } from 'react-router-dom';
 import useActions from '../../hooks/useActions';
 import useTypeSelector from '../../hooks/useTypeSelector';
 import { SearchProps } from './Search.interface';
 import SearchBy from './searchBtns/SearchBy';
 
+import styles from '../style';
+
 const Search: React.FC<SearchProps> = ({
   searchCTA,
   searchPlaceholder,
   searchBtnText,
-}: SearchProps) => {
+  classes,
+}) => {
   const {
     query, searchBy, page, limit,
   } = useTypeSelector((state) => state.movies);
   const { setQuery, fetchMovies } = useActions();
   return (
-    <div className="search">
+    <div className={classes.search}>
       <h2>{searchCTA}</h2>
       <input
         type="text"
         id="headerSearch"
-        className="headerSearch"
+        className={classes.headerSearch}
         placeholder={searchPlaceholder}
         value={query}
         onChange={(event) => setQuery(event.target.value)}
@@ -44,4 +48,6 @@ const Search: React.FC<SearchProps> = ({
   );
 };
 
-export default Search;
+const StyledSearch = withStyles(styles)(Search);
+
+export default StyledSearch;

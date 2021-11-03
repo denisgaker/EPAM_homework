@@ -43,42 +43,6 @@ header h1 {
   -webkit-justify-content: space-between;
 }
 
-/* .searchBy > label > input + span,
-.searchBy > span {
-  padding: 5px 10px;
-  color: #fff;
-}
-
-.searchBy > label {
-  display: inline-block;
-  margin: 0 5px;
-  cursor: pointer;
-  color: #fff;
-  background-color: #ff0000;
-}
-
-.searchBy > label > input[type="radio"] {
-  display: none;
-}
-
-.searchBy > label > input + span {
-  display: block;
-  border: 1px solid #ff0000;
-  transition: background-color ease .3s, color ease .3s;
-}
-
-.searchBy > label > input:checked + span {
-  background-color: #ff0000;
-  color: #fff;
-}
-
-.searchBy > label:hover > input + span,
-.searchBy > label:focus > input + span {
-  background-color: #fff;
-  color: #ff0000;
-  transition: background-color ease .3s, color ease .3s;
-} */
-
 .searchBy > span {
   padding: 5px 10px;
   color: #fff;

@@ -1,9 +1,15 @@
-import * as React from 'react';
-import { HeaderProps } from './Header.interface';
-import '../style.css';
+import React, { FC } from 'react';
+import withStyles, { WithStylesProps } from 'react-jss';
+// import { HeaderProps } from './Header.interface';
+// import '../style.css';
+import styles from '../style';
 
-const Header: React.FC<{}> = (props: HeaderProps) => (
-  <header className="header">{props.children}</header>
+interface StyledHeaderProps extends WithStylesProps<typeof styles> {}
+
+const Header:FC<StyledHeaderProps> = ({ classes, children }) => (
+  <header className={classes.header}>{children}</header>
 );
 
-export default Header;
+const StylesHeader = withStyles(styles)(Header);
+
+export default StylesHeader;
