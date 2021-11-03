@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Social network links 1`] = `
+<div
+  className="soc"
+>
+  <a
+    className="vk"
+    href="https://vk.com"
+    target="_blanck"
+    title="Переход на социальную сеть Вконтакте"
+  />
+  <a
+    className="facebook"
+    href="https://facebook.com"
+    target="_blanck"
+    title="Переход на социальную сеть Facebook"
+  />
+  <a
+    className="instagram"
+    href="https://instagram.com"
+    target="_blanck"
+    title="Переход на социальную сеть Instagram"
+  />
+  <a
+    className="youtube"
+    href="https://youtube.com"
+    target="_blanck"
+    title="Переход на видеохостинг Youtube"
+  />
+</div>
+`;
