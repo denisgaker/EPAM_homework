@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Datats from '../Data';
+import Datats from '../../Data';
 
 const FooterData = Datats.socialNetworkLinks;
 

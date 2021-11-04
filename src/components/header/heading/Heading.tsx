@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import { HeadingProps } from './Header.interface';
+import { HeadingProps } from './Heading.types';
 
 const Heading: React.FC<HeadingProps> = ({ name }: HeadingProps) => (
     <h1>

@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Heading from './Heading';
+import Heading from './heading/Heading';
 import Datats from '../../Data';
 import '@testing-library/jest-dom';
 

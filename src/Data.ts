@@ -13,7 +13,6 @@ enum MainKey {
 interface DatatsType {
   main: MainType;
   socialNetworkLinks: SocialNetworkLinksType[];
-  movies: MoviesType[];
 }
 
 type SocialNetworkLinksType = {
@@ -26,18 +25,6 @@ enum SocialNetworkLinksKey {
   desc = 'desc',
   target = 'target',
   key = 'key',
-}
-
-interface MovieTypeStrings {
-  title: string;
-  description: string;
-  genre: string;
-  image: string;
-  id: string;
-}
-
-interface MoviesType extends Omit<MovieTypeStrings, 'sumField'> {
-  year: number;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -84,32 +71,6 @@ const Datats: DatatsType = {
       desc: 'Переход на видеохостинг Youtube',
       target: '_blanck',
       key: 'fdsn_4',
-    },
-  ],
-  movies: [
-    {
-      title: 'Rick and Morty',
-      description: 'Animated science fiction sitcom',
-      year: 1995,
-      genre: 'comedy',
-      image: './img/rikAndMorti.jpg',
-      id: 'r43d2',
-    },
-    {
-      title: 'Stranger Things',
-      description: 'Animated science fiction sercies',
-      year: 1995,
-      genre: 'fantasy',
-      image: './img/strangerThings.jpg',
-      id: 'f43ds',
-    },
-    {
-      title: 'Interstellar',
-      description: 'Epic science fiction movie',
-      year: 1995,
-      genre: 'fantasy',
-      image: './img/interstellar.jpg',
-      id: 'd2s24',
     },
   ],
 };
