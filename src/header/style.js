@@ -9,6 +9,10 @@ const styles = {
     '& h1': {
       color: '#fff',
       'text-align': 'center',
+      '& a': {
+        color: '#fff',
+        'text-decoration': 'none',
+      },
     },
   },
   searchBy: {
