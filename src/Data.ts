@@ -52,7 +52,7 @@ enum MoviesKey {
 const Datats: DatatsType = {
   main: {
     nameApp: 'HETflix',
-    searchCTA: 'Find yout movie',
+    searchCTA: 'Find your movie',
     searchPlaceholder: 'Quentin Tarantino',
     searchBtnText: 'Search',
   },
