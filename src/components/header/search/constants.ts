@@ -1,5 +1,5 @@
-import Datats from '../../../Data';
+import datats from '../../../Data';
 
-export const SearchCTA = Datats.main.searchCTA;
-export const SearchPlaceholder = Datats.main.searchPlaceholder;
-export const SearchBtnText = Datats.main.searchBtnText;
+export const { searchCTA } = datats.main;
+export const { searchPlaceholder } = datats.main;
+export const { searchBtnText } = datats.main;

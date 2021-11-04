@@ -1,40 +1,4 @@
-/* eslint-disable no-unused-vars */
-type MainType = {
-  [key in MainKey]: string;
-};
-
-enum MainKey {
-  nameApp = 'nameApp',
-  searchCTA = 'searchCTA',
-  searchPlaceholder = 'searchPlaceholder',
-  searchBtnText = 'searchBtnText',
-}
-
-interface DatatsType {
-  main: MainType;
-  socialNetworkLinks: SocialNetworkLinksType[];
-}
-
-type SocialNetworkLinksType = {
-  [key in SocialNetworkLinksKey]: string;
-};
-
-enum SocialNetworkLinksKey {
-  name = 'name',
-  link = 'link',
-  desc = 'desc',
-  target = 'target',
-  key = 'key',
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-enum MoviesKey {
-  title = 'title',
-  description = 'description',
-  genre = 'genre',
-  image = 'image',
-  id = 'id',
-}
+import { DatatsType } from './Data.types';
 
 const Datats: DatatsType = {
   main: {

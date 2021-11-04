@@ -7,7 +7,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
   description,
   year,
   genre,
-}: MovieCardProps) => (
+}) => (
     <>
       <h3>{title}</h3>
       <span className="year">{year}</span>

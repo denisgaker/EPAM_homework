@@ -1,15 +1,12 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import useActions from '../../hooks/useActions';
-import useTypeSelector from '../../hooks/useTypeSelector';
+import useActions from '../../../hooks/useActions';
+import useTypeSelector from '../../../hooks/useTypeSelector';
 import { SearchProps } from './Search.interface';
 import SearchBy from './searchBtns/SearchBy';
+import { searchBtnText, searchCTA, searchPlaceholder } from './constants';
 
-const Search: React.FC<SearchProps> = ({
-  searchCTA,
-  searchPlaceholder,
-  searchBtnText,
-}: SearchProps) => {
+const Search: React.FC<SearchProps> = () => {
   const {
     query, searchBy, page, limit,
   } = useTypeSelector((state) => state.movies);

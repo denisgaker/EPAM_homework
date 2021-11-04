@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Datats from '../../Data';
+import datats from '../../Data';
 
-const FooterData = Datats.socialNetworkLinks;
+const footerData = datats.socialNetworkLinks;
 
 const SocLinks: React.FC = () => (
     <div className="soc">
-      {FooterData.map((fd) => (
+      {footerData.map((fd) => (
         <a href={fd.link} target={fd.target} title={fd.desc} className={fd.name} key={fd.key}></a>
       ))}
     </div>

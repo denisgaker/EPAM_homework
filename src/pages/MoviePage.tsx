@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ImageHelper from '../content/imagehelper/ImageHelper';
+import ImageHelper from '../components/content/imagehelper/ImageHelper';
 import useActions from '../hooks/useActions';
 import useTypeSelector from '../hooks/useTypeSelector';
 import './style.css';
