@@ -2,9 +2,9 @@
  * @jest-environment jsdom
  */
 import React from 'react';
-import Heading from './Heading';
-import { Datats } from '../../Data';
 import { render, screen } from '@testing-library/react';
+import Heading from './Heading';
+import Datats from '../../Data';
 import '@testing-library/jest-dom';
 
 const NameApp = Datats.main.nameApp;

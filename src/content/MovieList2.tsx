@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react';
-import { useActions } from '../hooks/useActions';
-import { useTypeSelector } from '../hooks/useTypeSelector';
+import { Link, useLocation } from 'react-router-dom';
+import useActions from '../hooks/useActions';
+import useTypeSelector from '../hooks/useTypeSelector';
 import ImageHelper from './imagehelper/ImageHelper';
 import MovieCard from './MovieCard/MovieCard';
-import { Link, useLocation } from 'react-router-dom';
 
 // ! TODO: Попробовать через useRef сравнить fetchMovies разных версий
 // ! TODO: Мемомизировать fetchMovies
 
 const MovieList2: React.FC = () => {
-  const { error, loading, movies, page, limit } = useTypeSelector((state) => state.movies);
+  const {
+    error, loading, movies, page, limit,
+  } = useTypeSelector((state) => state.movies);
   const { fetchMovies } = useActions();
   const pages = [1, 2, 3, 4, 5];
   const { search } = useLocation();
@@ -36,7 +38,7 @@ const MovieList2: React.FC = () => {
           <div className="MovieCard">
             <ImageHelper imagePath={movie.poster_path} />
             <MovieCard
-              title={movie.title + ` | id = ${movie.id}`}
+              title={`${movie.title} | id = ${movie.id}`}
               description={movie.overview}
               year={movie.release_date}
               genre={movie.genres.join(', ')}

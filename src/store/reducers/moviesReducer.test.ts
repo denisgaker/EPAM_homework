@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import { moviesReducer } from './moviesReducer';
 import { MoviesState, SearchType } from './moviesReducer.interface'; */
 import { setSearchBy } from '../action-creators/movie';
-import { useTypeSelector } from '../../hooks/useTypeSelector';
+import useTypeSelector from '../../hooks/useTypeSelector';
 import { SearchType } from './moviesReducer.interface';
 
 it('SearchBy shuod be "title"', () => {

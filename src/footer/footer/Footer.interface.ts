@@ -1,5 +1,5 @@
 import * as React from 'react';
 
-export interface footerType {
+export interface FooterType {
   children: Element | React.ReactNode;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import { useActions } from '../../../hooks/useActions';
-import { useTypeSelector } from '../../../hooks/useTypeSelector';
+import useActions from '../../../hooks/useActions';
+import useTypeSelector from '../../../hooks/useTypeSelector';
 import { SearchType } from '../../../store/reducers/moviesReducer.interface';
 
 const SearchBy = (): React.ReactElement => {

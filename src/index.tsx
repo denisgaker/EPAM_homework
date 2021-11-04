@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 import App from './App';
 import { store, persistor } from './store';
-import { PersistGate } from 'redux-persist/integration/react';
 
 const appContainer: HTMLElement = document.createElement('section');
 appContainer.id = 'app';
@@ -17,5 +17,5 @@ ReactDOM.render(
       </React.StrictMode>
     </PersistGate>
   </Provider>,
-  appContainer
+  appContainer,
 );

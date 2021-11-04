@@ -1,5 +1,8 @@
 import * as React from 'react';
-import { Datats } from './Data';
+import {
+  BrowserRouter as Router, Route, Switch, Redirect,
+} from 'react-router-dom';
+import Datats from './Data';
 import Header from './header/header/Header';
 import Heading from './header/header/Heading';
 import Search from './header/search/Search';
@@ -7,7 +10,7 @@ import Footer from './footer/footer/Footer';
 import SocLinks from './footer/SocLinks';
 import './style.css';
 import Copyright from './footer/copyright/Copyright';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+
 import DefaultPage from './pages/DefaultPage';
 import MovieList2 from './content/MovieList2';
 import MoviePage from './pages/MoviePage';

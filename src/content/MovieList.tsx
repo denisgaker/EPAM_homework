@@ -1,4 +1,4 @@
-import * as React from 'react';
+/* import * as React from 'react';
 import MovieCard from './MovieCard/MovieCard';
 import { Datats } from '../Data';
 import ImageHelper from './imagehelper/ImageHelper';
@@ -15,9 +15,9 @@ MovieData[2].image = Interstellar;
 class MovieList extends React.Component {
   render(): React.ReactNode {
     if (
-      MovieData[0].image != RikAndMorti ||
-      MovieData[1].image != StrangerThings ||
-      MovieData[2].image != Interstellar
+      MovieData[0].image !== RikAndMorti
+      || MovieData[1].image !== StrangerThings
+      || MovieData[2].image !== Interstellar
     ) {
       throw new Error('Произошла ошибка');
     }
@@ -41,3 +41,4 @@ class MovieList extends React.Component {
 }
 
 export default MovieList;
+ */

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ImageHelper from '../content/imagehelper/ImageHelper';
-import { useActions } from '../hooks/useActions';
-import { useTypeSelector } from '../hooks/useTypeSelector';
+import useActions from '../hooks/useActions';
+import useTypeSelector from '../hooks/useTypeSelector';
 import './style.css';
 
 interface IdFromUrl {
@@ -12,11 +12,11 @@ interface IdFromUrl {
 const MoviePage = (): React.ReactElement => {
   const urlParams: IdFromUrl = useParams();
   const { fetchMovieForId } = useActions();
-  const { movie } = useTypeSelector((state) => state.movies);
+  const movie = useTypeSelector((state) => state.movies.movie);
   useEffect(() => {
     fetchMovieForId(urlParams.film);
   }, []);
-  console.log('urlParams: ', urlParams.film, '\nТип данных: ', typeof urlParams.film);
+  // console.log('urlParams: ', urlParams.film, '\nТип данных: ', typeof urlParams.film);
   return (
     <div className="filmPage">
       <h1 style={{ width: '100%', textAlign: 'center' }}>

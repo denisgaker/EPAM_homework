@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-/* global module require __dirname */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
