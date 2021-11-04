@@ -6,7 +6,7 @@ import useTypeSelector from '../../hooks/useTypeSelector';
 import { SearchProps } from './Search.interface';
 import SearchBy from './searchBtns/SearchBy';
 
-import styles from '../style';
+import styles from './style';
 
 const Search: React.FC<SearchProps> = ({
   searchCTA,
@@ -29,14 +29,15 @@ const Search: React.FC<SearchProps> = ({
         value={query}
         onChange={(event) => setQuery(event.target.value)}
       />
-      <div className="searchCtrl">
-        <div className="searchBy">
+      <div className={classes.searchCtrl}>
+        <div className={classes.searchBy}>
           <span>Search by</span>
           <SearchBy />
         </div>
         <button
           type="button"
           id="headerSearchBtn"
+          className={classes.headerSearchBtn}
           onClick={() => fetchMovies(page, limit, query, searchBy)}
         >
           <NavLink to={{ pathname: '/films', search: `?searchBy=${searchBy}&query=${query}` }}>
