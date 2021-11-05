@@ -49,7 +49,7 @@ const MovieList2: React.FC = () => {
       ))}
       <div className="pagination">
         {pages.map((p) => (
-          <div onClick={() => fetchMovies(p)} className="page" key={p}>
+          <div onClick={() => fetchMovies(p, limit, searchParamsFromUrl[3], searchParamsFromUrl[1])} className="page" key={p}>
             {p}
           </div>
         ))}

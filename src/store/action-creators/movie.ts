@@ -22,6 +22,7 @@ export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false')
       params,
     });
     dispatch({ type: MoviesActionTypes.FETCH_MOVIES_SUCCESS, payload: response.data });
+    console.log('response.data: ', response.data);
   } catch (e) {
     dispatch({
       type: MoviesActionTypes.FETCH_MOVIES_ERROR,

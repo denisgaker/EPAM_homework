@@ -10,6 +10,7 @@ export interface MoviesState {
   query: string;
   movieId: string; // Для хранения id фильма
   movie: MovieType; // Для хранения данных по фильму
+  /* total: number; // Сохранение в state количества фильмов, возвращённых по запросу к API */
 }
 
 /* // Интерфейс для запроса конкретного фильма по ID
@@ -35,7 +36,7 @@ interface DataMovies {
 
 export enum SearchType {
   Title = 'title',
-  Genre = 'genre',
+  Genre = 'genres',
 }
 
 export enum MoviesActionTypes {
@@ -49,7 +50,15 @@ export enum MoviesActionTypes {
   SetSearchBy = 'setSearchBy',
   SetQuery = 'SetQuery',
   SetMovieId = 'SetMovieId', // Сохранение в state id фильма
+  // eslint-disable-next-line max-len
+  /* SetTotal = 'SetTotal', // Сохранение в state количества фильмов, возвращённых по запросу к API */
 }
+
+/* // Сохранение в state количества фильмов, возвращённых по запросу к API
+interface SetTotalAction {
+  type: MoviesActionTypes.SetTotal;
+  payload: number;
+} */
 
 interface FetchMovieForIdAction {
   type: MoviesActionTypes.FetchMovieForId;
@@ -111,3 +120,4 @@ export type MovieAction =
   | FetchMovieForIdAction // Запрос фильма по id
   | FetchMovieForIdSuccessAction // Успешный запрос фильма по id
   | FetchMovieForIdErrorAction; // Неудачный запрос фильма по id
+  /* | SetTotalAction; // Сохранение в state количества фильмов, возвращённых по запросу к API */

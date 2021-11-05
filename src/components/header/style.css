@@ -107,7 +107,7 @@ button#searchByGenre.active,
 button#headerSearchBtn:hover,
 button#headerSearchBtn:focus,
 button.searchByBtn.title[data-state="title"],
-button.searchByBtn.genre[data-state="genre"] {
+button.searchByBtn.genre[data-state="genres"] {
   background-color: #fff;
   color: #ff0000;
   transition: background-color ease .3s, color ease .3s;
