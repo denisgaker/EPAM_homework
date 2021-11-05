@@ -11,7 +11,6 @@ const Search: React.FC<SearchProps> = () => {
     query, searchBy, page, limit,
   } = useTypeSelector((state) => state.movies);
   const { setQuery, fetchMovies } = useActions();
-  console.log('searchBy: ', searchBy);
   return (
     <div className="search">
       <h2>{searchCTA}</h2>
