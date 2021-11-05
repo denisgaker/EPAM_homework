@@ -26,10 +26,10 @@ const App = (): React.ReactElement => (
         <Search searchBtnText={''} />
       </Header>
       <Switch>
-        <Route path="/film/:film" component={MoviePage} />
-        <Route path="/films" component={MovieList2} />
-        <Route path="/404" component={Page404} />
         <Route exact path="/" component={DefaultPage} />
+        <Route exact path="/films" component={MovieList2} />
+        <Route exact path="/film/:film" component={MoviePage} />
+        <Route path="/404" component={Page404} />
         <Redirect to="/404" />
       </Switch>
     </Router>
