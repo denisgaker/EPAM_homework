@@ -21,6 +21,7 @@
         "sourceType": "module",
         "project": "./tsconfig.json"
     },
+    "ignorePatterns": ["babel.config.json", "dist/entry.bundle.js"],
     "plugins": [
         "react",
         "@typescript-eslint",

@@ -9,4 +9,10 @@
     "moduleResolution": "node",
     "esModuleInterop": true
   },
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "include ": [
+    "**/*.config.json"
+  ]
 }
