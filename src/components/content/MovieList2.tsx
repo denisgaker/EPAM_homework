@@ -1,14 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, FC } from 'react';
+import withStyles, { WithStylesProps } from 'react-jss';
 import { Link, useLocation } from 'react-router-dom';
 import useActions from '../../hooks/useActions';
 import useTypeSelector from '../../hooks/useTypeSelector';
 import ImageHelper from './imagehelper/ImageHelper';
 import MovieCard from './MovieCard/MovieCard';
+import stylesMovieList2 from './stylesMovieList2';
+
+interface StyledMovieListProps extends WithStylesProps<typeof stylesMovieList2> {}
 
 // ! TODO: Попробовать через useRef сравнить fetchMovies разных версий
 // ! TODO: Мемомизировать fetchMovies
 
-const MovieList2: React.FC = () => {
+const MovieList2:FC<StyledMovieListProps> = ({ classes }) => {
   const {
     error, loading, movies, page, limit,
   } = useTypeSelector((state) => state.movies);
@@ -35,7 +39,7 @@ const MovieList2: React.FC = () => {
     <>
       {movies.map((movie) => (
         <Link key={movie.id} to={`/film/${movie.id}`}>
-          <div className="MovieCard">
+          <div className={classes.MovieCard}>
             <ImageHelper imagePath={movie.poster_path} />
             <MovieCard
               title={`${movie.title} | id = ${movie.id}`}
@@ -47,9 +51,12 @@ const MovieList2: React.FC = () => {
           </div>
         </Link>
       ))}
-      <div className="pagination">
+      <div className={classes.pagination}>
         {pages.map((p) => (
-          <div onClick={() => fetchMovies(p, limit, searchParamsFromUrl[3], searchParamsFromUrl[1])} className="page" key={p}>
+          <div
+            onClick={() => fetchMovies(p, limit, searchParamsFromUrl[3], searchParamsFromUrl[1])}
+            className={classes.page}
+            key={p}>
             {p}
           </div>
         ))}
@@ -58,4 +65,6 @@ const MovieList2: React.FC = () => {
   );
 };
 
-export default MovieList2;
+const StyledMovieList2 = withStyles(stylesMovieList2)(MovieList2);
+
+export default StyledMovieList2;

@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { FC } from 'react';
+import withStyles, { WithStylesProps } from 'react-jss';
 import useActions from '../../../../hooks/useActions';
 import useTypeSelector from '../../../../hooks/useTypeSelector';
 import { SearchType } from '../../../../store/reducers/moviesReducer.interface';
+import stylesSearchBy from './stylesSearchBy';
 
-const SearchBy = (): React.ReactElement => {
+interface StyledSearchByProps extends WithStylesProps<typeof stylesSearchBy> {}
+
+const SearchBy:FC<StyledSearchByProps> = ({ classes }): React.ReactElement => {
   const { searchBy } = useTypeSelector((state) => state.movies);
   const { setSearchBy } = useActions();
   return (
     <>
       <button
         type="button"
-        className="searchByBtn title"
+        className={classes.searchByBtn} // searchByBtn title
         data-state={searchBy}
         onClick={() => setSearchBy(SearchType.Title)}
       >
@@ -18,7 +22,7 @@ const SearchBy = (): React.ReactElement => {
       </button>
       <button
         type="button"
-        className="searchByBtn genre"
+        className={classes.searchByBtn} // searchByBtn genre
         data-state={searchBy}
         onClick={() => setSearchBy(SearchType.Genre)}
       >
@@ -28,4 +32,6 @@ const SearchBy = (): React.ReactElement => {
   );
 };
 
-export default SearchBy;
+const StyledSearchBy = withStyles(stylesSearchBy)(SearchBy);
+
+export default StyledSearchBy;

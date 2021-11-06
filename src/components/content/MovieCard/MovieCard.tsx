@@ -1,8 +1,7 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import { MovieCardProps } from './MovieCard.interface';
-import '../style.css';
 
-const MovieCard: React.FC<MovieCardProps> = ({
+const MovieCard:FC<MovieCardProps> = ({
   title,
   description,
   year,
@@ -10,9 +9,9 @@ const MovieCard: React.FC<MovieCardProps> = ({
 }) => (
     <>
       <h3>{title}</h3>
-      <span className="year">{year}</span>
+      <span>{year}</span>
       <p>{description}</p>
-      <span className="genre">{genre}</span>
+      <span>{genre}</span>
     </>
 );
 

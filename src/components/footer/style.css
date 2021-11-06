@@ -41,15 +41,15 @@ footer p {
     background: #fff;
 }
 
-.soc a.vk {
+a.vk {
     background: url('img/vk.png') center center/30px auto no-repeat;
 }
-.soc a.facebook {
+a.facebook {
     background: url('img/fb.png') center center/30px auto no-repeat;
 }
-.soc a.instagram {
+a.instagram {
     background: url('img/ins.png') center center/30px auto no-repeat;
 }
-.soc a.youtube {
+a.youtube {
     background: url('img/yt.png') center center/30px auto no-repeat;
 }
