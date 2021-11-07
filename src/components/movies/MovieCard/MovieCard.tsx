@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { MovieCardProps } from './MovieCard.interface';
 
 const MovieCard:FC<MovieCardProps> = ({
@@ -15,4 +15,4 @@ const MovieCard:FC<MovieCardProps> = ({
     </>
 );
 
-export default MovieCard;
+export default memo(MovieCard);

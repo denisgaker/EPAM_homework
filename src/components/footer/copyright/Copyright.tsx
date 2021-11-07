@@ -1,10 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { CopyType } from './Copyright.interface';
 
-const Copyright:FC<CopyType> = ({ name }) => {
-  const date = new Date().getFullYear();
-  const text = ' | All right reserved';
-  return <p>&#169;{` ${date} ${name} ${text}`}</p>;
-};
+const Copyright:FC<CopyType> = ({ name }) => (
+  <p>&#169;{` ${new Date().getFullYear()} ${name} | All right reserved`}</p>
+);
 
-export default Copyright;
+export default memo(Copyright);

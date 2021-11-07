@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 import { HeadingProps } from './Heading.types';
 
@@ -8,4 +8,4 @@ const Heading: React.FC<HeadingProps> = ({ name }) => (
     </h1>
 );
 
-export default Heading;
+export default memo(Heading);
