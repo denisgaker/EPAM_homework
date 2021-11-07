@@ -1,24 +1,21 @@
 import React, { FC } from 'react';
 import withStyles, { WithStylesProps } from 'react-jss';
-import datats from '../../Data';
+import socLinks from './socLinks.constants';
 import stylesSocLinks from './stylesSocLinks';
 import icons from './img/icons';
-import './style.css';
 
 interface StyledSocLinksProps extends WithStylesProps<typeof stylesSocLinks> {}
 
-const footerData = datats.socialNetworkLinks;
-
 const SocLinks:FC<StyledSocLinksProps> = ({ classes }) => (
     <div className={classes.soc}>
-      {footerData.map((fd) => (
-        <a href={fd.link}
-           target={fd.target}
-           title={fd.desc}
-           key={fd.key}>
+      {socLinks.map((sl) => (
+        <a href={sl.link}
+           target={sl.target}
+           title={sl.desc}
+           key={sl.key}>
             <img
-              src={icons.filter((ic) => ic.name === fd.name)[0].link}
-              alt={fd.desc}
+              src={icons.filter((ic) => ic.name === sl.name)[0].link}
+              alt={sl.desc}
             />
         </a>
       ))}

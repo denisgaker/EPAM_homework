@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router, Route, Switch, Redirect,
 } from 'react-router-dom';
 import withStyles, { WithStylesProps } from 'react-jss';
-import datats from './Data';
+// import datats from './Data';
 import Header from './components/header/Header';
 import Heading from './components/header/heading/Heading';
 import Search from './components/header/search/Search';
@@ -17,16 +17,18 @@ import MovieList2 from './components/content/MovieList2';
 import MoviePage from './pages/MoviePage';
 import Page404 from './pages/Page404';
 
+import APP_NAME from './app.constants';
+
 interface StyledAppProps extends WithStylesProps<typeof styles> {}
 
-const { nameApp } = datats.main;
+// const { nameApp } = datats.main;
 
 const App:FC<StyledAppProps> = ({ classes }) => (
   <div className={classes.app}>
     <Router>
       <Header>
-        <Heading name={nameApp} />
-        <Search searchBtnText={''} />
+        <Heading name={APP_NAME} />
+        <Search />
       </Header>
       <Switch>
         <Route exact path="/" component={DefaultPage} />
@@ -37,7 +39,7 @@ const App:FC<StyledAppProps> = ({ classes }) => (
       </Switch>
     </Router>
     <Footer>
-      <Copyright name={nameApp} />
+      <Copyright name={APP_NAME} />
       <SocLinks />
     </Footer>
   </div>

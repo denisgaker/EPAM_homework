@@ -4,6 +4,7 @@ import useActions from '../../../../hooks/useActions';
 import useTypeSelector from '../../../../hooks/useTypeSelector';
 import { SearchType } from '../../../../store/reducers/moviesReducer.interface';
 import stylesSearchBy from './stylesSearchBy';
+import { title, genre } from './searchBtns.constants';
 
 interface StyledSearchByProps extends WithStylesProps<typeof stylesSearchBy> {}
 
@@ -18,7 +19,7 @@ const SearchBy:FC<StyledSearchByProps> = ({ classes }): React.ReactElement => {
         data-state={searchBy}
         onClick={() => setSearchBy(SearchType.Title)}
       >
-        Title
+        {title}
       </button>
       <button
         type="button"
@@ -26,7 +27,7 @@ const SearchBy:FC<StyledSearchByProps> = ({ classes }): React.ReactElement => {
         data-state={searchBy}
         onClick={() => setSearchBy(SearchType.Genre)}
       >
-        Genre
+        {genre}
       </button>
     </>
   );

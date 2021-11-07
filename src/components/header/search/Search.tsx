@@ -1,14 +1,16 @@
 import React, { FC } from 'react';
-import withStyles from 'react-jss';
+import withStyles, { WithStylesProps } from 'react-jss';
 import { NavLink } from 'react-router-dom';
 import useActions from '../../../hooks/useActions';
 import useTypeSelector from '../../../hooks/useTypeSelector';
-import { SearchProps } from './Search.interface';
+// import { SearchProps } from './Search.interface';
 import SearchBy from './searchBtns/SearchBy';
 import { searchBtnText, searchCTA, searchPlaceholder } from './constants';
 import stylesSearch from './stylesSearch';
 
-const Search:FC<SearchProps> = ({ classes }) => {
+interface StylesSearchProps extends WithStylesProps<typeof stylesSearch> {}
+
+const Search:FC<StylesSearchProps> = ({ classes }) => {
   const {
     query, searchBy, page, limit,
   } = useTypeSelector((state) => state.movies);

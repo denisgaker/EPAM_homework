@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { SearchProps } from '../Search.interface';
 
 const SearchStart = (searchBtnText: SearchProps): React.ReactElement => (
@@ -7,4 +7,4 @@ const SearchStart = (searchBtnText: SearchProps): React.ReactElement => (
     </button>
 );
 
-export default SearchStart;
+export default SearchStart; */
