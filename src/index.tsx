@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import App from './App';
+import App from './components/app/App';
 import { store, persistor } from './store';
-import './reset.css';
+import './components/app/reset.css';
 
 const appContainer: HTMLElement = document.createElement('section');
 appContainer.id = 'app';

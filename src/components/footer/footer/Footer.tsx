@@ -1,12 +1,13 @@
 import React, { FC } from 'react';
-import withStyles from 'react-jss';
-import { FooterType } from './Footer.interface';
-import stylesFooter from './stylesFooter';
+import withStyles, { WithStylesProps } from 'react-jss';
+import styles from './style';
 
-const Footer:FC<FooterType> = ({ classes, children }) => (
+interface StyledFooterProps extends WithStylesProps<typeof styles> {}
+
+const Footer:FC<StyledFooterProps> = ({ classes, children }) => (
   <footer className={classes.footer}>{children}</footer>
 );
 
-const StyledFooter = withStyles(stylesFooter)(Footer);
+const StyledFooter = withStyles(styles)(Footer);
 
 export default StyledFooter;

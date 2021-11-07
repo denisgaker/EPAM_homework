@@ -1,11 +1,11 @@
-const stylesSearch = {
+const styles = {
   search: {
     display: 'flex',
-    'flex-flow': 'row wrap',
-    'justify-content': 'flex-start',
-    'align-items': 'flex-start',
+    flexFlow: 'row wrap',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
     width: '100%',
-    'max-width': 1200,
+    maxWidth: 1200,
     margin: [0, 'auto'],
     '& h2': {
       width: '100%',
@@ -14,19 +14,19 @@ const stylesSearch = {
   },
   headerSearch: {
     display: 'flex',
-    'flex-flow': 'row wrap',
-    'justify-content': 'space-between',
-    'align-items': 'space-between',
+    flexFlow: 'row wrap',
+    justifyContent: 'space-between',
+    alignItems: 'space-between',
     width: '100%',
     margin: '0 0 15px 0',
     padding: '0 10px',
-    'min-height': '31px',
+    minHeight: '31px',
   },
   searchCtrl: {
     display: 'flex',
-    'flex-flow': 'row wrap',
-    'justify-content': 'space-between',
-    'align-items': 'flex-start',
+    flexFlow: 'row wrap',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
     width: '100%',
   },
   searchBy: {
@@ -36,15 +36,15 @@ const stylesSearch = {
     },
   },
   headerSearchBtn: {
-    'min-height': '31px',
+    minHeight: '31px',
     padding: '5px 10px',
     border: '1px solid #ff0000',
-    'background-color': '#ff0000',
+    backgroundColor: '#ff0000',
     color: '#fff',
     cursor: 'pointer',
     transition: 'background-color ease .3s, color ease .3s',
     '&:hover': {
-      'background-color': '#fff',
+      backgroundColor: '#fff',
       color: '#ff0000',
       transition: 'background-color ease .3s, color ease .3s',
       '& a': {
@@ -54,10 +54,10 @@ const stylesSearch = {
     },
     '& a': {
       color: '#fff',
-      'text-decoration': 'none',
+      textDecoration: 'none',
       transition: 'color ease .3s',
     },
   },
 };
 
-export default stylesSearch;
+export default styles;

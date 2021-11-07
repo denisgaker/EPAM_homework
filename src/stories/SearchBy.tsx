@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import withStyles, { WithStylesProps } from 'react-jss';
 import { SearchType } from '../store/reducers/moviesReducer.interface';
-import stylesSearchBy from '../components/header/search/searchBtns/stylesSearchBy';
+import stylesSearchBy from '../components/header/search/searchBtns/style';
 
 interface StyledSearchByProps extends WithStylesProps<typeof stylesSearchBy> {
   label1: string

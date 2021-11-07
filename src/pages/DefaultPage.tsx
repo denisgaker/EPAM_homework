@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import withStyles, { WithStylesProps } from 'react-jss';
-import stylesMovieList2 from '../components/content/stylesMovieList2';
+import stylesMovieList2 from '../components/movies/style';
 
 interface StyledDefaultPageProps extends WithStylesProps<typeof stylesMovieList2> {}
 

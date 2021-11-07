@@ -1,15 +1,15 @@
-const stylesFooter = {
+const styles = {
   footer: {
     display: 'block',
     width: '100%',
     margin: '50px auto 0 auto',
     padding: '30px 10px 50px',
-    'background-color': 'black',
+    backgroundColor: 'black',
     '& p': {
       color: 'white',
-      'text-align': 'center',
+      textAlign: 'center',
     },
   },
 };
 
-export default stylesFooter;
+export default styles;

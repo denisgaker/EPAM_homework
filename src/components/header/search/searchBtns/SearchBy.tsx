@@ -3,10 +3,10 @@ import withStyles, { WithStylesProps } from 'react-jss';
 import useActions from '../../../../hooks/useActions';
 import useTypeSelector from '../../../../hooks/useTypeSelector';
 import { SearchType } from '../../../../store/reducers/moviesReducer.interface';
-import stylesSearchBy from './stylesSearchBy';
+import styles from './style';
 import { title, genre } from './searchBtns.constants';
 
-interface StyledSearchByProps extends WithStylesProps<typeof stylesSearchBy> {}
+interface StyledSearchByProps extends WithStylesProps<typeof styles> {}
 
 const SearchBy:FC<StyledSearchByProps> = ({ classes }): React.ReactElement => {
   const { searchBy } = useTypeSelector((state) => state.movies);
@@ -33,6 +33,6 @@ const SearchBy:FC<StyledSearchByProps> = ({ classes }): React.ReactElement => {
   );
 };
 
-const StyledSearchBy = withStyles(stylesSearchBy)(SearchBy);
+const StyledSearchBy = withStyles(styles)(SearchBy);
 
 export default StyledSearchBy;

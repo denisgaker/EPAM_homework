@@ -1,9 +1,9 @@
-const stylesSocLinks = {
+const styles = {
   soc: {
     display: 'flex',
-    'flex-flow': 'row nowrap',
-    'justify-content': 'center',
-    'align-items': 'center',
+    flexFlow: 'row nowrap',
+    justifyContent: 'center',
+    alignItems: 'center',
     '& a': {
       display: 'block',
       width: '30px',
@@ -18,4 +18,4 @@ const stylesSocLinks = {
   },
 };
 
-export default stylesSocLinks;
+export default styles;

@@ -4,7 +4,7 @@ import { HeadingProps } from './Heading.types';
 
 const Heading: React.FC<HeadingProps> = ({ name }) => (
     <h1>
-      <NavLink to={'/'}>{`${name}`}</NavLink>
+      <NavLink to={'/'}>{name}</NavLink>
     </h1>
 );
 

@@ -3,12 +3,11 @@ import withStyles, { WithStylesProps } from 'react-jss';
 import { NavLink } from 'react-router-dom';
 import useActions from '../../../hooks/useActions';
 import useTypeSelector from '../../../hooks/useTypeSelector';
-// import { SearchProps } from './Search.interface';
 import SearchBy from './searchBtns/SearchBy';
-import { searchBtnText, searchCTA, searchPlaceholder } from './constants';
-import stylesSearch from './stylesSearch';
+import { btnText, cta, placeholder } from './constants';
+import styles from './style';
 
-interface StylesSearchProps extends WithStylesProps<typeof stylesSearch> {}
+interface StylesSearchProps extends WithStylesProps<typeof styles> {}
 
 const Search:FC<StylesSearchProps> = ({ classes }) => {
   const {
@@ -17,12 +16,12 @@ const Search:FC<StylesSearchProps> = ({ classes }) => {
   const { setQuery, fetchMovies } = useActions();
   return (
     <div className={classes.search}>
-      <h2>{searchCTA}</h2>
+      <h2>{cta}</h2>
       <input
         type="text"
         id="headerSearch"
-        className={classes.headerSearch} // headerSearch
-        placeholder={searchPlaceholder}
+        className={classes.headerSearch}
+        placeholder={placeholder}
         value={query}
         onChange={(event) => setQuery(event.target.value)}
       />
@@ -38,7 +37,7 @@ const Search:FC<StylesSearchProps> = ({ classes }) => {
           onClick={() => fetchMovies(page, limit, query, searchBy)}
         >
           <NavLink to={{ pathname: '/films', search: `?searchBy=${searchBy}&query=${query}` }}>
-            {searchBtnText}
+            {btnText}
           </NavLink>
         </button>
       </div>
@@ -46,6 +45,6 @@ const Search:FC<StylesSearchProps> = ({ classes }) => {
   );
 };
 
-const StyledSearch = withStyles(stylesSearch)(Search);
+const StyledSearch = withStyles(styles)(Search);
 
 export default StyledSearch;

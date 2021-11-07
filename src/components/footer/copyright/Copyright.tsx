@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import { CopyType } from './Copyright.interface';
 
-const Copyright: React.FC<CopyType> = ({ name }) => {
+const Copyright:FC<CopyType> = ({ name }) => {
   const date = new Date().getFullYear();
   const text = ' | All right reserved';
   return <p>&#169;{` ${date} ${name} ${text}`}</p>;

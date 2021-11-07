@@ -1,13 +1,15 @@
 import React, { useEffect, FC } from 'react';
 import withStyles, { WithStylesProps } from 'react-jss';
 import { Link, useLocation } from 'react-router-dom';
+import Url from 'url-parse';
 import useActions from '../../hooks/useActions';
 import useTypeSelector from '../../hooks/useTypeSelector';
 import ImageHelper from './imagehelper/ImageHelper';
 import MovieCard from './MovieCard/MovieCard';
-import stylesMovieList2 from './stylesMovieList2';
+import styles from './style';
+import pages from './movieList.constants';
 
-interface StyledMovieListProps extends WithStylesProps<typeof stylesMovieList2> {}
+interface StyledMovieListProps extends WithStylesProps<typeof styles> {}
 
 // ! TODO: Попробовать через useRef сравнить fetchMovies разных версий
 // ! TODO: Мемомизировать fetchMovies
@@ -17,16 +19,11 @@ const MovieList2:FC<StyledMovieListProps> = ({ classes }) => {
     error, loading, movies, page, limit,
   } = useTypeSelector((state) => state.movies);
   const { fetchMovies } = useActions();
-  const pages = [1, 2, 3, 4, 5];
   const { search } = useLocation();
-  const searchParamsFromUrl = search.split(/&|=/);
-  /**
-   * Структура массива searchParamsFromUrl:
-   * searchParamsFromUrl: ['?searchBy', 'title', 'query', 'Transformers']
-   */
+  const urlParams = new Url(search, true);
 
   useEffect(() => {
-    fetchMovies(page, limit, searchParamsFromUrl[3], searchParamsFromUrl[1]);
+    fetchMovies(page, limit, urlParams.query.query, urlParams.query.searchBy);
   }, []);
 
   if (loading) {
@@ -45,27 +42,31 @@ const MovieList2:FC<StyledMovieListProps> = ({ classes }) => {
   }
   return (
     <div className={classes.movieList}>
-      {movies.map((movie) => (
-        <Link key={movie.id} to={`/film/${movie.id}`}>
+      {movies.map(({
+        id, poster_path, title, overview, release_date, genres,
+      }) => (
+        <Link key={id} to={`/film/${id}`}>
           <div className={classes.MovieCard}>
-            <ImageHelper imagePath={movie.poster_path} />
+            <ImageHelper path={poster_path} />
             <MovieCard
-              title={movie.title}
-              description={movie.overview}
-              year={movie.release_date}
-              genre={movie.genres.join(', ')}
-              key={movie.id}
+              title={title}
+              description={overview}
+              year={release_date}
+              genre={genres.join(', ')}
+              key={id}
             />
           </div>
         </Link>
       ))}
       <div className={classes.pagination}>
-        {pages.map((p) => (
+        {pages.map((pageNum) => (
           <div
-            onClick={() => fetchMovies(p, limit, searchParamsFromUrl[3], searchParamsFromUrl[1])}
+            onClick={() => fetchMovies(
+              pageNum, limit, urlParams.query.query, urlParams.query.searchBy,
+            )}
             className={classes.page}
-            key={p}>
-            {p}
+            key={pageNum}>
+            {pageNum}
           </div>
         ))}
       </div>
@@ -73,6 +74,6 @@ const MovieList2:FC<StyledMovieListProps> = ({ classes }) => {
   );
 };
 
-const StyledMovieList2 = withStyles(stylesMovieList2)(MovieList2);
+const StyledMovieList2 = withStyles(styles)(MovieList2);
 
 export default StyledMovieList2;

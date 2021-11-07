@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ImageHelper from '../components/content/imagehelper/ImageHelper';
+import ImageHelper from '../components/movies/imagehelper/ImageHelper';
 import useActions from '../hooks/useActions';
 import useTypeSelector from '../hooks/useTypeSelector';
 import './style.css';
@@ -22,7 +22,7 @@ const MoviePage = (): React.ReactElement => {
       <h1 style={{ width: '100%', textAlign: 'center' }}>
         Страница с фильмом | id = {urlParams.film}
       </h1>
-      <ImageHelper imagePath={movie.poster_path} />
+      <ImageHelper path={movie.poster_path} />
       <div className="filmDesc">
         <h1>{movie.title}</h1>
         <p>{movie.overview}</p>

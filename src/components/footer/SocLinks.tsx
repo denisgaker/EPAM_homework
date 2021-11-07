@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import withStyles, { WithStylesProps } from 'react-jss';
 import socLinks from './socLinks.constants';
-import stylesSocLinks from './stylesSocLinks';
+import styles from './style';
 import icons from './img/icons';
 
-interface StyledSocLinksProps extends WithStylesProps<typeof stylesSocLinks> {}
+interface StyledSocLinksProps extends WithStylesProps<typeof styles> {}
 
 const SocLinks:FC<StyledSocLinksProps> = ({ classes }) => (
     <div className={classes.soc}>
@@ -22,6 +22,6 @@ const SocLinks:FC<StyledSocLinksProps> = ({ classes }) => (
     </div>
 );
 
-const StyledSocLink = withStyles(stylesSocLinks)(SocLinks);
+const StyledSocLink = withStyles(styles)(SocLinks);
 
 export default StyledSocLink;
