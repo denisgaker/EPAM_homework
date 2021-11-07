@@ -4,6 +4,9 @@ const stylesSearch = {
     'flex-flow': 'row wrap',
     'justify-content': 'flex-start',
     'align-items': 'flex-start',
+    width: '100%',
+    'max-width': 1200,
+    margin: [0, 'auto'],
     '& h2': {
       width: '100%',
       color: '#fff',

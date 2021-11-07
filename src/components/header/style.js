@@ -9,6 +9,10 @@ const styles = {
     '& h1': {
       color: '#fff',
       'text-align': 'center',
+      'font-size': 30,
+      width: '100%',
+      'max-width': 1200,
+      margin: [0, 'auto'],
       '& a': {
         color: '#fff',
         'text-decoration': 'none',
@@ -29,12 +33,26 @@ const styles = {
     color: '#fff',
     cursor: 'pointer',
     transition: 'background-color ease .3s, color ease .3s',
-    '&:hover, & :focus, & .active, & title[data-state="title"], & genre[data-state="genre"]': {
+    '&:hover, & :focus': {
       'background-color': '#fff',
       color: '#ff0000',
       transition: 'background-color ease .3s, color ease .3s',
     },
   },
+  /* title: {
+    '&[data-state="title"]': {
+      'background-color': '#fff',
+      color: '#ff0000',
+      transition: 'background-color ease .3s, color ease .3s',
+    },
+    genre: {
+      '&[data-state="genre"]': {
+        'background-color': '#fff',
+        color: '#ff0000',
+        transition: 'background-color ease .3s, color ease .3s',
+      },
+    },
+  }, */
 };
 
 export default styles;

@@ -14,7 +14,7 @@ const SearchBy:FC<StyledSearchByProps> = ({ classes }): React.ReactElement => {
     <>
       <button
         type="button"
-        className={classes.searchByBtn} // searchByBtn title
+        className={[classes.searchByBtn, classes.title].join(' ')} // searchByBtn title
         data-state={searchBy}
         onClick={() => setSearchBy(SearchType.Title)}
       >
@@ -22,7 +22,7 @@ const SearchBy:FC<StyledSearchByProps> = ({ classes }): React.ReactElement => {
       </button>
       <button
         type="button"
-        className={classes.searchByBtn} // searchByBtn genre
+        className={[classes.searchByBtn, classes.genres].join(' ')} // searchByBtn genre
         data-state={searchBy}
         onClick={() => setSearchBy(SearchType.Genre)}
       >

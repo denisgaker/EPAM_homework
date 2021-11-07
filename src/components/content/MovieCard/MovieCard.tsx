@@ -9,9 +9,9 @@ const MovieCard:FC<MovieCardProps> = ({
 }) => (
     <>
       <h3>{title}</h3>
-      <span>{year}</span>
       <p>{description}</p>
-      <span>{genre}</span>
+      <span><b>Жанр: </b>{genre}</span>
+      <span><b>Дата выхода: </b>{year}</span>
     </>
 );
 

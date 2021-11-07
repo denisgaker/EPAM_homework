@@ -13,12 +13,16 @@ const stylesSearchBy = {
       color: '#ff0000',
       transition: 'background-color ease .3s, color ease .3s',
     },
-    '&title': {
+  },
+  title: {
+    '&[data-state="title"]': {
       'background-color': '#fff',
       color: '#ff0000',
       transition: 'background-color ease .3s, color ease .3s',
     },
-    '& [data-state="title"]': {
+  },
+  genres: {
+    '&[data-state="genres"]': {
       'background-color': '#fff',
       color: '#ff0000',
       transition: 'background-color ease .3s, color ease .3s',

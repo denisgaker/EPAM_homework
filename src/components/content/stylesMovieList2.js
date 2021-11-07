@@ -1,4 +1,28 @@
 const stylesMovieList2 = {
+  movieList: {
+    display: 'flex',
+    'flex-flow': 'row wrap',
+    'justify-content': 'space-between',
+    'align-items': 'stretch',
+    width: '100%',
+    'max-width': 1200,
+    margin: [0, 'auto'],
+    '& a': {
+      padding: 5,
+      margin: [15, 'auto'],
+      border: '1px solid #eee',
+      'text-decoration': 'none',
+      color: '#242d32',
+      '&:hover': {
+        'box-shadow': '1px 3px 4px 2px rgba(0,0,0,0.5)',
+      },
+    },
+    '& h1': {
+      width: '100%',
+      'font-size': 30,
+      'text-align': 'center',
+    },
+  },
   MovieCard: {
     display: 'flex',
     'flex-flow': 'row wrap',
@@ -6,7 +30,6 @@ const stylesMovieList2 = {
     'align-items': 'stretch',
     width: '100%',
     'max-width': 350,
-    margin: '30px 0',
     padding: 0,
     '& img': {
       display: 'block',
@@ -14,19 +37,27 @@ const stylesMovieList2 = {
     },
     '& h3': {
       display: 'block',
-      margin: '10px 0',
-      width: 'calc(100% - 100px)',
+      margin: '20px 0',
+      padding: [0, 10],
+      width: '100%',
+      'text-decoration': 'none',
+      'text-align': 'center',
     },
     '& span': {
       display: 'block',
+      width: '100%',
       margin: '10px 0',
-      width: 100,
+      padding: [0, 10],
       'text-align': 'right',
+      'text-decoration': 'none',
+      color: '#164ebe',
     },
     '& p': {
-      margin: 0,
       width: '100%',
-      'text-align': 'left',
+      margin: [0, 0, 20],
+      padding: [0, 10],
+      'text-align': 'justify',
+      'text-decoration': 'none',
     },
   },
   pagination: {

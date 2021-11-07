@@ -30,19 +30,27 @@ const MovieList2:FC<StyledMovieListProps> = ({ classes }) => {
   }, []);
 
   if (loading) {
-    return <h2>Идёт загрузка</h2>;
+    return (
+      <div className={classes.movieList}>
+        <h1>Идёт загрузка</h1>;
+      </div>
+    );
   }
   if (error) {
-    return <h2>{error}</h2>;
+    return (
+      <div className={classes.movieList}>
+        <h2>{error}</h2>;
+      </div>
+    );
   }
   return (
-    <>
+    <div className={classes.movieList}>
       {movies.map((movie) => (
         <Link key={movie.id} to={`/film/${movie.id}`}>
           <div className={classes.MovieCard}>
             <ImageHelper imagePath={movie.poster_path} />
             <MovieCard
-              title={`${movie.title} | id = ${movie.id}`}
+              title={movie.title}
               description={movie.overview}
               year={movie.release_date}
               genre={movie.genres.join(', ')}
@@ -61,7 +69,7 @@ const MovieList2:FC<StyledMovieListProps> = ({ classes }) => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

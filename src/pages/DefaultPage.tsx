@@ -1,5 +1,15 @@
-import * as React from 'react';
+import React, { FC } from 'react';
+import withStyles, { WithStylesProps } from 'react-jss';
+import stylesMovieList2 from '../components/content/stylesMovieList2';
 
-const DefaultPage = (): React.ReactElement => <h1 style={{ textAlign: 'center', width: '100%' }}>0</h1>;
+interface StyledDefaultPageProps extends WithStylesProps<typeof stylesMovieList2> {}
 
-export default DefaultPage;
+const DefaultPage:FC<StyledDefaultPageProps> = ({ classes }) => (
+  <div className={classes.movieList}>
+    <h1>0</h1>
+  </div>
+);
+
+const styledDefaultPage = withStyles(stylesMovieList2)(DefaultPage);
+
+export default styledDefaultPage;

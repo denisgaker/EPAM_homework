@@ -47,6 +47,10 @@ module.exports = (env) => ({
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'assets/resource',
+      },
     ],
   },
   resolve: {
