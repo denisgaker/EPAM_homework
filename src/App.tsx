@@ -22,7 +22,7 @@ interface StyledAppProps extends WithStylesProps<typeof styles> {}
 const { nameApp } = datats.main;
 
 const App:FC<StyledAppProps> = ({ classes }) => (
-  <section className={classes.app}>
+  <div className={classes.app}>
     <Router>
       <Header>
         <Heading name={nameApp} />
@@ -40,7 +40,7 @@ const App:FC<StyledAppProps> = ({ classes }) => (
       <Copyright name={nameApp} />
       <SocLinks />
     </Footer>
-  </section>
+  </div>
 );
 
 const StyledApp = withStyles(styles)(App);
