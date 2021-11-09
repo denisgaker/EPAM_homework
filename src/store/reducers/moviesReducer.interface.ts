@@ -10,16 +10,8 @@ export interface MoviesState {
   query: string;
   movieId: string; // Для хранения id фильма
   movie: MovieType; // Для хранения данных по фильму
-  /* total: number; // Сохранение в state количества фильмов, возвращённых по запросу к API */
+  total: number; // Сохранение в state количества фильмов, возвращённых по запросу к API
 }
-
-/* // Интерфейс для запроса конкретного фильма по ID
-export interface MovieIdState {
-  movie: MovieType;
-  loading: boolean;
-  error: null | string;
-  movieId: string;
-} */
 
 interface MovieType {
   title: string;
@@ -32,6 +24,7 @@ interface MovieType {
 
 interface DataMovies {
   data: [];
+  total: number
 }
 
 export enum SearchType {
@@ -51,14 +44,14 @@ export enum MoviesActionTypes {
   SetQuery = 'SetQuery',
   SetMovieId = 'SetMovieId', // Сохранение в state id фильма
   // eslint-disable-next-line max-len
-  /* SetTotal = 'SetTotal', // Сохранение в state количества фильмов, возвращённых по запросу к API */
+  SetTotal = 'SetTotal', // Сохранение в state количества фильмов, возвращённых по запросу к API
 }
 
-/* // Сохранение в state количества фильмов, возвращённых по запросу к API
+// Сохранение в state количества фильмов, возвращённых по запросу к API
 interface SetTotalAction {
   type: MoviesActionTypes.SetTotal;
-  payload: number;
-} */
+  payload: DataMovies
+}
 
 interface FetchMovieForIdAction {
   type: MoviesActionTypes.FetchMovieForId;
@@ -119,5 +112,5 @@ export type MovieAction =
   | SetMovieIdAction // Сохранение в state id фильма
   | FetchMovieForIdAction // Запрос фильма по id
   | FetchMovieForIdSuccessAction // Успешный запрос фильма по id
-  | FetchMovieForIdErrorAction; // Неудачный запрос фильма по id
-  /* | SetTotalAction; // Сохранение в state количества фильмов, возвращённых по запросу к API */
+  | FetchMovieForIdErrorAction // Неудачный запрос фильма по id
+  | SetTotalAction; // Сохранение в state количества фильмов, возвращённых по запросу к API

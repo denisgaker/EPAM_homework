@@ -21,13 +21,13 @@ const initialState: MoviesState = {
     poster_path: '',
     release_date: '',
   },
-  /* total: null, */
+  total: 0,
 };
 
 const moviesReducer = (state = initialState, action: MovieAction): MoviesState => {
   switch (action.type) {
-    /* case MoviesActionTypes.SetTotal:
-      return { ...state, total: action.payload }; */
+    case MoviesActionTypes.SetTotal:
+      return { ...state, total: action.payload.total };
     case MoviesActionTypes.FetchMovieForId:
       return { ...state, loading: true, error: null };
     case MoviesActionTypes.FetchMovieForIdSuccess:

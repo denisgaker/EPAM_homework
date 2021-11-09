@@ -6,8 +6,9 @@ import useActions from '../../hooks/useActions';
 import useTypeSelector from '../../hooks/useTypeSelector';
 import ImageHelper from './imagehelper/ImageHelper';
 import MovieCard from './MovieCard/MovieCard';
+import Pagination from './pagination/paginagion';
 import styles from './style';
-import pages from './movieList.constants';
+// import pages from './movieList.constants';
 
 interface StyledMovieListProps extends WithStylesProps<typeof styles> {}
 
@@ -58,18 +59,7 @@ const MovieList2:FC<StyledMovieListProps> = ({ classes }) => {
           </div>
         </Link>
       ))}
-      <div className={classes.pagination}>
-        {pages.map((pageNum) => (
-          <div
-            onClick={() => fetchMovies(
-              pageNum, limit, urlParams.query.query, urlParams.query.searchBy,
-            )}
-            className={classes.page}
-            key={pageNum}>
-            {pageNum}
-          </div>
-        ))}
-      </div>
+      <Pagination />
     </div>
   );
 };
