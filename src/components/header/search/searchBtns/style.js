@@ -1,4 +1,10 @@
 const styles = {
+  searchBy: {
+    '& span': {
+      padding: '5px 10px',
+      color: '#fff',
+    },
+  },
   searchByBtn: {
     margin: '0 5px',
     minHeight: '31px',

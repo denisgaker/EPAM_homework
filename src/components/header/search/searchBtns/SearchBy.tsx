@@ -12,7 +12,8 @@ const SearchBy:FC<StyledSearchByProps> = ({ classes }): React.ReactElement => {
   const { searchBy } = useTypeSelector((state) => state.movies);
   const { setSearchBy } = useActions();
   return (
-    <>
+    <div className={classes.searchBy}>
+      <span>Search by</span>
       <button
         type="button"
         className={[classes.searchByBtn, classes.title].join(' ')} // searchByBtn title
@@ -29,7 +30,7 @@ const SearchBy:FC<StyledSearchByProps> = ({ classes }): React.ReactElement => {
       >
         {genre}
       </button>
-    </>
+    </div>
   );
 };
 

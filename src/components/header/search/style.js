@@ -29,12 +29,6 @@ const styles = {
     alignItems: 'flex-start',
     width: '100%',
   },
-  searchBy: {
-    '& span': {
-      padding: '5px 10px',
-      color: '#fff',
-    },
-  },
   headerSearchBtn: {
     minHeight: '31px',
     padding: '5px 10px',

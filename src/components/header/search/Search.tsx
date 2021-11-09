@@ -26,10 +26,7 @@ const Search:FC<StylesSearchProps> = ({ classes }) => {
         onChange={(event) => setQuery(event.target.value)}
       />
       <div className={classes.searchCtrl}>
-        <div className={classes.searchBy}>
-          <span>Search by</span>
-          <SearchBy />
-        </div>
+        <SearchBy />
         <button
           type="button"
           id="headerSearchBtn"
