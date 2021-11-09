@@ -10,7 +10,7 @@ export interface MoviesState {
   query: string;
   movieId: string; // Для хранения id фильма
   movie: MovieType; // Для хранения данных по фильму
-  total: number; // Сохранение в state количества фильмов, возвращённых по запросу к API
+  total: number | null; // Сохранение в state количества фильмов, возвращённых по запросу к API
 }
 
 interface MovieType {
@@ -23,7 +23,7 @@ interface MovieType {
 }
 
 interface DataMovies {
-  data: [];
+  data: MovieType[]
   total: number
 }
 

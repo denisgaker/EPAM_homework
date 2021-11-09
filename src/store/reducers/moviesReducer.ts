@@ -21,7 +21,7 @@ const initialState: MoviesState = {
     poster_path: '',
     release_date: '',
   },
-  total: 0,
+  total: null,
 };
 
 const moviesReducer = (state = initialState, action: MovieAction): MoviesState => {

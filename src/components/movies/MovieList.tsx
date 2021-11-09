@@ -27,17 +27,10 @@ const MovieList2:FC<StyledMovieListProps> = ({ classes }) => {
     fetchMovies(page, limit, urlParams.query.query, urlParams.query.searchBy);
   }, []);
 
-  if (loading) {
+  if (loading || error) {
     return (
       <div className={classes.movieList}>
-        <h1>Идёт загрузка</h1>;
-      </div>
-    );
-  }
-  if (error) {
-    return (
-      <div className={classes.movieList}>
-        <h2>{error}</h2>;
+        { loading ? <h1>Идёт загрузка</h1> : <h2>{error}</h2> };
       </div>
     );
   }

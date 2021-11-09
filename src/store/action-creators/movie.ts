@@ -18,12 +18,12 @@ export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false')
     };
     if (query !== '' && query !== undefined) params.search = query;
     if (searchBy !== 'false') params.searchBy = searchBy;
-    const response = await axios.get('https://reactjs-cdp.herokuapp.com/movies', {
+    const { data } = await axios.get('https://reactjs-cdp.herokuapp.com/movies', {
       params,
     });
-    dispatch({ type: MoviesActionTypes.FETCH_MOVIES_SUCCESS, payload: response.data });
-    dispatch({ type: MoviesActionTypes.SetTotal, payload: response.data });
-    console.log('response.data: ', response.data);
+    dispatch({ type: MoviesActionTypes.FETCH_MOVIES_SUCCESS, payload: data });
+    dispatch({ type: MoviesActionTypes.SetTotal, payload: data });
+    // console.log('response.data: ', response);
   } catch (e) {
     dispatch({
       type: MoviesActionTypes.FETCH_MOVIES_ERROR,
