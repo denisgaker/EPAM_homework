@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import withStyles, { WithStylesProps } from 'react-jss';
 import { NavLink } from 'react-router-dom';
 import useActions from '../../../hooks/useActions';
@@ -14,6 +14,9 @@ const Search:FC<StylesSearchProps> = ({ classes }) => {
     query, searchBy, page, limit,
   } = useTypeSelector((state) => state.movies);
   const { setQuery, fetchMovies } = useActions();
+  const searchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(event.target.value);
+  };
   return (
     <div className={classes.search}>
       <h2>{cta}</h2>
@@ -23,7 +26,8 @@ const Search:FC<StylesSearchProps> = ({ classes }) => {
         className={classes.headerSearch}
         placeholder={placeholder}
         value={query}
-        onChange={(event) => setQuery(event.target.value)}
+        onChange={(event) => searchHandler(event)}
+        // onChange={(event) => setQuery(event.target.value)}
       />
       <div className={classes.searchCtrl}>
         <SearchBy />
@@ -31,7 +35,7 @@ const Search:FC<StylesSearchProps> = ({ classes }) => {
           type="button"
           id="headerSearchBtn"
           className={classes.headerSearchBtn}
-          onClick={() => fetchMovies(page, limit, query, searchBy)}
+          onClick={() => useEffect(() => { fetchMovies(page, limit, query, searchBy); }, []) }
         >
           <NavLink to={{ pathname: '/films', search: `?searchBy=${searchBy}&query=${query}` }}>
             {btnText}
