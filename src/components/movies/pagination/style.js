@@ -9,18 +9,10 @@ const styles = {
   page: {
     padding: 10,
     border: '1px solid #ff0000',
-    borderRight: 'none',
     backgroundColor: '#ff0000',
     color: '#fff',
     cursor: 'pointer',
     transition: 'background-color .3s ease, color .3s ease',
-    '&:last-child': {
-      borderRight: '1px solid #ff0000',
-    },
-    /* '& active': {
-      backgroundColor: '#fff',
-      color: '#ff0000',
-    }, */
     '&:hover': {
       backgroundColor: '#fff',
       color: '#ff0000',
@@ -35,6 +27,12 @@ const styles = {
   active: {
     backgroundColor: '#fff',
     color: '#ff0000',
+  },
+  start: {
+    margin: [0, 10, 0, 0],
+  },
+  end: {
+    margin: [0, 0, 0, 10],
   },
 };
 
