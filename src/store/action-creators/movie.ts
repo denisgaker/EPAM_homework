@@ -1,6 +1,8 @@
 import { Dispatch } from 'react';
 import axios from 'axios';
-import { MovieAction, MoviesActionTypes, SearchType } from '../reducers/moviesReducer.interface';
+import {
+  MovieAction, MoviesActionTypes, SearchType, MoviesState,
+} from '../reducers/moviesReducer.interface';
 
 interface Params {
   offset: number;
@@ -9,7 +11,11 @@ interface Params {
   searchBy?: string;
 }
 
-export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false') => async (dispatch: Dispatch<MovieAction>): Promise<void> => {
+interface ServerResponse {
+  data: MoviesState
+}
+
+export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false') => async (dispatch: Dispatch<MovieAction>): Promise<ServerResponse> => {
   try {
     dispatch({ type: MoviesActionTypes.FETCH_MOVIES });
     const params: Params = {
@@ -23,12 +29,13 @@ export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false')
     });
     dispatch({ type: MoviesActionTypes.FETCH_MOVIES_SUCCESS, payload: data });
     dispatch({ type: MoviesActionTypes.SetTotal, payload: data });
-    // console.log('response.data: ', response);
+    return data;
   } catch (e) {
     dispatch({
       type: MoviesActionTypes.FETCH_MOVIES_ERROR,
       payload: 'Произошла ошибка при загрузке страницы',
     });
+    return e;
   }
 };
 
