@@ -11,7 +11,6 @@ interface StyledPaginationProps extends WithStylesProps<typeof styles> {}
 const Pagination:FC<StyledPaginationProps> = ({ classes }) => {
   const { limit, total, page } = useTypeSelector((state) => state.movies);
   const { fetchMovies, setMoviePage } = useActions();
-  console.log('page: ', page);
 
   const { search } = useLocation();
   const urlParams = new Url(search, true);
@@ -26,7 +25,7 @@ const Pagination:FC<StyledPaginationProps> = ({ classes }) => {
               fetchMovies(pageNum, limit, urlParams.query.query, urlParams.query.searchBy);
               setMoviePage(pageNum);
             }}
-            className={classes.page}
+            className={ (page === pageNum) ? [classes.page, classes.active].join(' ') : classes.page }
             key={pageNum}>
             {pageNum}
           </div>

@@ -17,10 +17,10 @@ const styles = {
     '&:last-child': {
       borderRight: '1px solid #ff0000',
     },
-    '& active': {
+    /* '& active': {
       backgroundColor: '#fff',
       color: '#ff0000',
-    },
+    }, */
     '&:hover': {
       backgroundColor: '#fff',
       color: '#ff0000',
@@ -31,6 +31,10 @@ const styles = {
       color: '#ff0000',
       transition: 'background-color .3s ease, color .3s ease',
     },
+  },
+  active: {
+    backgroundColor: '#fff',
+    color: '#ff0000',
   },
 };
 
