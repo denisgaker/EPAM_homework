@@ -60,7 +60,7 @@ export const setMovieId = (movieId: string) => (dispatch: Dispatch<MovieAction>)
   dispatch({ type: MoviesActionTypes.SetMovieId, payload: movieId });
 };
 
-/* export const setMoviePage = (page: number): MovieAction => {
+export const setMoviePage = (page: number): MovieAction => {
   console.log('Клик - ф-ция setMoviePage работает, страница № ', page);
   return { type: MoviesActionTypes.SET_MOVIES_PAGE, payload: page };
-}; */
+};

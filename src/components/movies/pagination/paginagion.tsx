@@ -9,8 +9,9 @@ import styles from './style';
 interface StyledPaginationProps extends WithStylesProps<typeof styles> {}
 
 const Pagination:FC<StyledPaginationProps> = ({ classes }) => {
-  const { limit, total } = useTypeSelector((state) => state.movies);
-  const { fetchMovies } = useActions();
+  const { limit, total, page } = useTypeSelector((state) => state.movies);
+  const { fetchMovies, setMoviePage } = useActions();
+  console.log('page: ', page);
 
   const { search } = useLocation();
   const urlParams = new Url(search, true);
@@ -21,9 +22,10 @@ const Pagination:FC<StyledPaginationProps> = ({ classes }) => {
     <div className={classes.pagination}>
         {pages.map((pageNum) => (
           <div
-            onClick={() => fetchMovies(
-              pageNum, limit, urlParams.query.query, urlParams.query.searchBy,
-            )}
+            onClick={() => {
+              fetchMovies(pageNum, limit, urlParams.query.query, urlParams.query.searchBy);
+              setMoviePage(pageNum);
+            }}
             className={classes.page}
             key={pageNum}>
             {pageNum}
