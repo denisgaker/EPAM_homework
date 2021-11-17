@@ -1,7 +1,10 @@
-import * as React from 'react';
-import { ImagePathProps } from './ImageHelper.interface';
+import NoImage from '../img/noImage.jpg';
 
-// ! Todo Сделать проверку на наличие изображения
-const ImageHelper = ({ path }: ImagePathProps): React.ReactElement => <img src={path} />;
+const ImageHelper = (c: string) => {
+  const images = document.querySelectorAll(`.${c} img`);
+  for (let i = 0; i < images.length; i += 1) {
+    if (images[i].clientHeight === 0) images[i].attributes[0].value = NoImage;
+  }
+};
 
 export default ImageHelper;

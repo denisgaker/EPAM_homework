@@ -1,8 +1,5 @@
-import React, { ReactElement } from 'react'; // //, { useEffect }
-// //import { useParams } from 'react-router-dom';
+import React, { ReactElement } from 'react';
 import ImageHelper from '../components/movies/imagehelper/ImageHelper';
-// //import useActions from '../hooks/useActions';
-// //import useTypeSelector from '../hooks/useTypeSelector';
 import '../pages/style.css';
 
 const MoviePage = ({
@@ -17,11 +14,11 @@ const MoviePage = ({
 }):ReactElement => {
   console.log('Страница с фильмом');
   return (
-    <div className="filmPage">
+    <div className="filmPage" onLoad={() => ImageHelper('filmPage')}>
       <h1 style={{ width: '100%', textAlign: 'center' }}>
         Страница с фильмом | id = {urlParams.film}
       </h1>
-      <ImageHelper path={movie.poster_path} />
+      <img src={movie.poster_path} alt={movie.title} />
       <div className="filmDesc">
         <h1>{movie.title}</h1>
         <p>{movie.overview}</p>

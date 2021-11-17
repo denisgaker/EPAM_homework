@@ -8,7 +8,6 @@ import ImageHelper from './imagehelper/ImageHelper';
 import MovieCard from './MovieCard/MovieCard';
 import Pagination from './pagination/paginagion';
 import styles from './style';
-// import pages from './movieList.constants';
 
 interface StyledMovieListProps extends WithStylesProps<typeof styles> {}
 
@@ -34,14 +33,15 @@ const MovieList2:FC<StyledMovieListProps> = ({ classes }) => {
       </div>
     );
   }
+
   return (
-    <div className={classes.movieList}>
+    <div className={classes.movieList} onLoad={() => ImageHelper(classes.movieList)}>
       {movies.map(({
         id, poster_path, title, overview, release_date, genres,
       }) => (
         <Link key={id} to={`/film/${id}`}>
           <div className={classes.MovieCard}>
-            <ImageHelper path={poster_path} />
+            <img src={poster_path} alt={title} />
             <MovieCard
               title={title}
               description={overview}

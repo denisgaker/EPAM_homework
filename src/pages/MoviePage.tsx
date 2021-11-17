@@ -1,34 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, FC } from 'react';
+import withStyles, { WithStylesProps } from 'react-jss';
 import { useParams } from 'react-router-dom';
-import ImageHelper from '../components/movies/imagehelper/ImageHelper';
 import useActions from '../hooks/useActions';
 import useTypeSelector from '../hooks/useTypeSelector';
-import './style.css';
+import styles from './style';
+
+interface StyledMoviePageProps extends WithStylesProps<typeof styles> {}
 
 interface IdFromUrl {
   film: string;
 }
 
-const MoviePage = (): React.ReactElement => {
+const MoviePage:FC<StyledMoviePageProps> = ({ classes }) => {
   const urlParams: IdFromUrl = useParams();
   const { fetchMovieForId } = useActions();
-  const movie = useTypeSelector((state) => state.movies.movie);
+  const movies = useTypeSelector((state) => state.movies.movie);
   useEffect(() => {
     fetchMovieForId(urlParams.film);
   }, []);
-  // console.log('urlParams: ', urlParams.film, '\nТип данных: ', typeof urlParams.film);
   return (
-    <div className="filmPage">
-      <h1 style={{ width: '100%', textAlign: 'center' }}>
-        Страница с фильмом | id = {urlParams.film}
-      </h1>
-      <ImageHelper path={movie.poster_path} />
-      <div className="filmDesc">
-        <h1>{movie.title}</h1>
-        <p>{movie.overview}</p>
+    <div className={classes.filmPage}>
+      <img src={movies.poster_path} alt={movies.title} />
+      <div className={classes.filmDesc}>
+        <h1>{movies.title}</h1>
+        <p>{movies.overview}</p>
       </div>
     </div>
   );
 };
 
-export default MoviePage;
+const StyledMoviePage = withStyles(styles)(MoviePage);
+
+export default StyledMoviePage;
