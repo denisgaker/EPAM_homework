@@ -1,7 +1,7 @@
 import { Dispatch } from 'react';
 import axios from 'axios';
 import {
-  MovieAction, MoviesActionTypes, SearchType, MoviesState,
+  MovieAction, MoviesActionTypes, SearchType,
 } from '../reducers/moviesReducer.interface';
 
 interface Params {
@@ -11,11 +11,7 @@ interface Params {
   searchBy?: string;
 }
 
-interface ServerResponse {
-  data: MoviesState
-}
-
-export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false') => async (dispatch: Dispatch<MovieAction>): Promise<ServerResponse> => {
+export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false') => async (dispatch: Dispatch<MovieAction>): Promise<void> => {
   try {
     dispatch({ type: MoviesActionTypes.FETCH_MOVIES });
     const params: Params = {
@@ -24,18 +20,16 @@ export const fetchMovies = (page = 1, limit = 9, query = '', searchBy = 'false')
     };
     if (query !== '' && query !== undefined) params.search = query;
     if (searchBy !== 'false') params.searchBy = searchBy;
-    const { data } = await axios.get('https://reactjs-cdp.herokuapp.com/movies', {
+    const response = await axios.get('https://reactjs-cdp.herokuapp.com/movies', {
       params,
     });
-    dispatch({ type: MoviesActionTypes.FETCH_MOVIES_SUCCESS, payload: data });
-    dispatch({ type: MoviesActionTypes.SetTotal, payload: data });
-    return data;
+    dispatch({ type: MoviesActionTypes.FETCH_MOVIES_SUCCESS, payload: response.data });
+    dispatch({ type: MoviesActionTypes.SetTotal, payload: response.data });
   } catch (e) {
     dispatch({
       type: MoviesActionTypes.FETCH_MOVIES_ERROR,
       payload: 'Произошла ошибка при загрузке страницы',
     });
-    return e;
   }
 };
 

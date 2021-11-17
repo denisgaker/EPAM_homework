@@ -27,7 +27,7 @@ const Pagination:FC<StyledPaginationProps> = ({ classes }) => {
     fetchMovies(p, limit, urlParams.query.query, urlParams.query.searchBy);
     setMoviePage(p);
   };
-
+  if (total < 10) return <div className={classes.pagination}></div>;
   return (
     <div className={classes.pagination}>
         <div
